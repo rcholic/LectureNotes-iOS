@@ -1,5 +1,5 @@
 # iOS App - Multimedia Lecture Notes
-## in Fulfillment of CS6460 Course Requirements
+## In Fulfillment of Georgia Tech CS6460 Course Requirements
 ## Author: Guoliang Wang (gwang89@gatech.edu)
 
 
@@ -28,6 +28,15 @@
  iOS device or the Apple iCloud.
 
 ### 2. Program Requirements
+* 2.1 User Interfaces
 
+ The main user interface (UI, hereafter) uses the `UITableView` as provided in the iOS UIKit for displaying the notes by title or the creation date in each table cell (`UITableViewCell`). This table view supports notes search and sorting by title and date. Furthermore, the user will be able to delete notes in this main user interface view, and the user may tap on the `Add` button on this interface to create a new note.
+
+ The
+
+
+
+
+* 2.2 Data Storage
 
 ### 3. Life Cycle Requirements
