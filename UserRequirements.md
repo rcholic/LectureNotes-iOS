@@ -14,7 +14,7 @@
 1. Introduction
 2. Program Requirements
 3. Life Cycle Requirements
-..* Development
-..* Testing
-..* Delivery
- 
+
+...* Development
+...* Testing
+...* Delivery
