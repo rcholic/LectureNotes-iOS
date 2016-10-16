@@ -20,14 +20,14 @@
    * Testing
    * Delivery
 
- ### 1. Introduction
+### 1. Introduction
  To help students take lecture notes more effectively, I create this iOS-based app for students to take notes through multimedia such as charts, free text handwriting, recording lecture audio/video clips and taking pictures.
 
  The multimedia format allows students to take notes with more dimensions of information. The app aims to help students organize media files by lecture and/or dates, and the user will not need to spend time
  organizing media files for the lecture notes. Furthermore, the media files can be stored on the
  iOS device or the Apple iCloud.
 
- ### 2. Program Requirements
+### 2. Program Requirements
 
 
- ### 3. Life Cycle Requirements
+### 3. Life Cycle Requirements
