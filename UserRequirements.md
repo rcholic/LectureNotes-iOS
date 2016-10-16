@@ -5,8 +5,8 @@
 
 ## Revision History
 | Rev. #        | Date          |  Revision Summary  |
-| ------------- |:-------------:| ------------------:|
-| 1             | N/A           | N/A                |
+| ------------- |:-------------:| :------------------|
+| N/A           | N/A           | N/A                |
 
 
 ## Table Of Contents
@@ -14,7 +14,6 @@
 1. Introduction
 2. Program Requirements
 3. Life Cycle Requirements
-
-...* Development
-...* Testing
-...* Delivery
+..* Development
+..* Testing
+..* Delivery
