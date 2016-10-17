@@ -56,9 +56,9 @@ This app uses *MVC* architecture pattern for the three layers: model, view, and 
 
 Implementation of this app will be module-based, and the following modules will be implemented in the following sequential order:
 
-   * 3.2.1 DrawView: An extension of the iOS UIView for tracking user's handwriting by translating  tapping to connected `UIBezierPath`.
-   * 3.2.2 Notes Table View: This is the list of persisted notes with their title or date of creation displayed, which extends from the iOS `UITableView` and `UITableViewCell` classes.
-   * 3.2.3 Notes Creation View: This is a list of `DrawView` in the form of `UITableView`, each cell in the `UITableView` has a `DrawView` embedded, which simulates pages visually.
+        * 3.2.1 DrawView: An extension of the iOS UIView for tracking user's handwriting by translating  tapping to connected `UIBezierPath`.
+        * 3.2.2 Notes Table View: This is the list of persisted notes with their title or date of creation displayed, which extends from the iOS `UITableView` and `UITableViewCell` classes.
+        * 3.2.3 Notes Creation View: This is a list of `DrawView` in the form of `UITableView`, each cell in the `UITableView` has a `DrawView` embedded, which simulates pages visually.
 
 * 3.3 Testing
 
