@@ -16,6 +16,7 @@
    * User Interfaces
    * Data Storage
 3. Life Cycle Requirements
+   * Architecture Design
    * Development
    * Testing
    * Delivery
@@ -43,7 +44,23 @@
 
 * 2.2 Data Storage
 
-This iOS app uses the `CoreData` for data storage by default, and allows users to save the notes with the associated media files in their **iCloud** account. The app uses the *MVC* architecture pattern and, therefore a `LectureNote` class will be created for modeling the lecture notes and it association with media files. Both notes and the associated media files are stored in the binary data format, and the association of note to media files will be one-to-many.
+This iOS app uses the `CoreData` for data storage by default, and it allows users to save the notes with the associated media files in their **iCloud** account. The app uses the *MVC* architecture pattern and, therefore a `LectureNote` class will be created for modeling the lecture notes and its association relationships with media files. Both notes and the associated media files are stored in the binary data format, and the association of note to media files will be one-to-many.
 
 
 ### 3. Life Cycle Requirements
+* 3.1 Architecture Design
+
+This app uses *MVC* architecture pattern for the three layers: model, view, and controller. The version of the `Swift` language is 3.0, and wherever appropriate, the reactive version `RxSwift` will be used for facilitating user interaction and the program work flow.
+
+* 3.2 Development
+
+Implementation of this app will be module-based, and the following modules will be implemented in the following sequential order:
+
+    1. DrawView: An extension of the iOS UIView for tracking user's handwriting by translating  tapping to connected `UIBezierPath`.
+    2. Notes Table View: This is the list of persisted notes with their title or date of creation displayed, which extends from the iOS `UITableView` and `UITableViewCell` classes.
+    3. Notes Creation Page: This is a list of `DrawView` in the form of `UITableView`, each cell in the `UITableView` has a `DrawView` embedded, which simulates pages visually.
+
+* 3.3 Testing
+
+
+* 3.4 Delivery
