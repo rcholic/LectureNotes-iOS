@@ -62,5 +62,8 @@ Implementation of this app will be module-based, and the following modules will 
 
 * 3.3 Testing
 
+Unit testing will be implemented for each custom UIView class in `Swift`.
 
 * 3.4 Delivery
+
+Upon completion of the implementation, the app will be available for download from this `repo` page, and the user can build and run the app in `XCode 8` or above.
