@@ -32,14 +32,18 @@
 
  The main user interface (UI, hereafter) uses the `UITableView` as provided in the iOS UIKit for displaying the notes by title or the creation date in each table cell (`UITableViewCell`). This table view supports notes search and sorting by title and date. Furthermore, the user will be able to delete notes in this main user interface view, and the user may tap on the `Add` button on this interface to create a new note.
 
- The UI for creating lecture notes uses the same `UITableView` and `UITableViewCell`, however, each table cell will load a custom view called `DrawView` that supports user handwriting and inserting media files. Each table view cell will be represented as a page, because the height of the `DrawView` is the same as the height of the iOS device screen, and users can use their fingertips to tap/scroll down the note pages. They can also add/remove pages as needed. At the bottom and the top of this UI, there will be tools for users to perform the following operations:
+ The UI for creating lecture notes uses the same `UITableView` and `UITableViewCell`, however, each table cell will load a custom view called `DrawView` that supports user handwriting and inserting media files. Each table view cell will be represented as a page, because the height of the `DrawView` is the same as the height of the iOS device screen, and users can use their fingertips to tap/scroll down the note pages. They can also add/remove pages as needed. At the bottom and the top of this UI, there will be tools/buttons for users to perform the following operations:
 
     * Adjust the stroke width and color of the brush/pencil
-    * Taking pictures on the iOS device camera for inserting into the note
-    * Selecting pictures from their iOS device album for inserting into the note
-    * Deleting inserted pictures
-
+    * Take pictures on the iOS device camera for inserting into the note
+    * Select pictures from their iOS device album for inserting into the note
+    * Delete inserted pictures
+    * Record voice/video and insert the recording to the note
+    * Drag the media anywhere on the note for a better organization
 
 * 2.2 Data Storage
+
+This iOS app uses the `CoreData` for data storage by default, and allows users to save the notes with the associated media files in their **iCloud** account. The app uses the *MVC* architecture pattern and, therefore a `LectureNote` class will be created for modeling the lecture notes and it association with media files. Both notes and the associated media files are stored in the binary data format, and the association of note to media files will be one-to-many.
+
 
 ### 3. Life Cycle Requirements
