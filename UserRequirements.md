@@ -24,23 +24,25 @@
 ### 1. Introduction
  To help students take lecture notes more effectively, I create this iOS-based app for students to take notes through multimedia such as charts, free text handwriting, recording lecture audio/video clips and taking pictures.
 
- The multimedia format allows students to take notes with more dimensions of information. The app aims to help students organize media files by lecture and/or dates, and the user will not need to spend time
+ The multimedia format allows students to take notes with more dimensions of information. The app aims to help students organize media files by lecture and/or dates, users need not to spend time
  organizing media files for the lecture notes. Furthermore, the media files can be stored on the
- iOS device or the Apple iCloud.
+ iOS device or the Apple `iCloud`.
 
 ### 2. Program Requirements
 * 2.1 User Interfaces
 
- The main user interface (UI, hereafter) uses the `UITableView` as provided in the iOS UIKit for displaying the notes by title or the creation date in each table cell (`UITableViewCell`). This table view supports notes search and sorting by title and date. Furthermore, the user will be able to delete notes in this main user interface view, and the user may tap on the `Add` button on this interface to create a new note.
+ The main user interface (UI, hereafter) uses the `UITableView` class as provided in the iOS UIKit for displaying the notes by title or the creation date in each table cell (`UITableViewCell`). This table view supports notes search and sorting by title and date. Furthermore, the user will be able to delete notes in this main user interface view, and users may tap on the `Add` button on this interface to create a new note.
 
- The UI for creating lecture notes uses the same `UITableView` and `UITableViewCell`, however, each table cell will load a custom view called `DrawView` that supports user handwriting and inserting media files. Each table view cell will be represented as a page, because the height of the `DrawView` is the same as the height of the iOS device screen, and users can use their fingertips to tap/scroll down the note pages. They can also add/remove pages as needed. At the bottom and the top of this UI, there will be tools/buttons for users to perform the following operations:
+ The UI for creating lecture notes uses the same `UITableView` and `UITableViewCell` classes, however, each table cell will load a custom view named `DrawView` that supports user handwriting and inserting media files. Each table view cell will be represented as a page, because the height of the `DrawView` is the same as the height of the iOS device screen, and users can use their fingertips to tap/scroll down the note pages. They can also add/remove pages as needed. At the bottom and the top of this UI, there will be tools/buttons for users to perform the following operations:
 
     * Adjust the stroke width and color of the brush/pencil
+    * Eraser to remove unwanted handwriting
+    * Add or delete a page in the notes
     * Take pictures on the iOS device camera for inserting into the note
     * Select pictures from their iOS device album for inserting into the note
     * Delete inserted pictures
     * Record voice/video and insert the recording to the note
-    * Drag the media anywhere on the note for a better organization
+    * Drag the media anywhere on the note for better organization
 
 * 2.2 Data Storage
 
@@ -54,7 +56,7 @@ This app uses *MVC* architecture pattern for the three layers: model, view, and 
 
 * 3.2 Development
 
-Implementation of this app will be module-based, and the following modules will be implemented in the following sequential order:
+Implementation of this app will be modular, and the following modules will be implemented in a sequential order:
 
         * 3.2.1 DrawView: An extension of the iOS UIView for tracking user's handwriting by translating  tapping to connected `UIBezierPath`.
         * 3.2.2 Notes Table View: This is the list of persisted notes with their title or date of creation displayed, which extends from the iOS `UITableView` and `UITableViewCell` classes.
@@ -62,8 +64,8 @@ Implementation of this app will be module-based, and the following modules will 
 
 * 3.3 Testing
 
-Unit testing will be implemented for each custom UIView class in `Swift`.
+Unit tests will be implemented for each custom UIView class in `Swift`.
 
 * 3.4 Delivery
 
-Upon completion of the implementation, the app will be available for download from this `repo` page, and the user can build and run the app in `XCode 8` or above.
+Upon completion of the implementation and testing, the app will be available for download from [this repo page](https://github.com/rcholic/LectureNotes-iOS), and the user can build and run the app in `XCode 8` or above.
