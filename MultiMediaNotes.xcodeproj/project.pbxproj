@@ -12,9 +12,14 @@
 		4502123F9A1A5346FE099516 /* Pods_MultiMediaNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F42B4A627757C5BD3E5518 /* Pods_MultiMediaNotes.framework */; };
 		8963DC3DABC6AF6DE95D9A67 /* Pods_MultiMediaNotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB547D36C32DCF7AFFDBC3BF /* Pods_MultiMediaNotesUITests.framework */; };
 		A4BD377ABA9363992049925E /* Pods_MultiMediaNotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E417D5C6BBA9B358B469C216 /* Pods_MultiMediaNotesTests.framework */; };
+		EB68271B1DBD936B000E6541 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68271A1DBD936B000E6541 /* Note.swift */; };
 		EBDF89531DBD71480022EDC5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF89521DBD71480022EDC5 /* SnapKit.framework */; };
 		EBDF89551DBD714D0022EDC5 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF89541DBD714D0022EDC5 /* SwiftDate.framework */; };
 		EBDF89571DBD83200022EDC5 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF89561DBD83200022EDC5 /* NotesListViewController.swift */; };
+		EBDF895D1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF895B1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.swift */; };
+		EBDF895E1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBDF895C1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.xib */; };
+		EBDF89611DBD86FB0022EDC5 /* NoteListTableViewCellWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF895F1DBD86FB0022EDC5 /* NoteListTableViewCellWithImage.swift */; };
+		EBDF89621DBD86FB0022EDC5 /* NoteListTableViewCellWithImage.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBDF89601DBD86FB0022EDC5 /* NoteListTableViewCellWithImage.xib */; };
 		EBFF5DD51DB436AC00DB7154 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFF5DD41DB436AC00DB7154 /* AppDelegate.swift */; };
 		EBFF5DDA1DB436AC00DB7154 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBFF5DD81DB436AC00DB7154 /* Main.storyboard */; };
 		EBFF5DDD1DB436AC00DB7154 /* MultiMediaNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBFF5DDB1DB436AC00DB7154 /* MultiMediaNotes.xcdatamodeld */; };
@@ -56,9 +61,14 @@
 		D2526CFC9B9CE66472DC0769 /* Pods-MultiMediaNotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiMediaNotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultiMediaNotesUITests/Pods-MultiMediaNotesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D758C9552E161E0A3BD4CBE2 /* Pods-MultiMediaNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiMediaNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultiMediaNotes/Pods-MultiMediaNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		E417D5C6BBA9B358B469C216 /* Pods_MultiMediaNotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiMediaNotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB68271A1DBD936B000E6541 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		EBDF89521DBD71480022EDC5 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		EBDF89541DBD714D0022EDC5 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/SwiftDate/SwiftDate.framework"; sourceTree = "<group>"; };
 		EBDF89561DBD83200022EDC5 /* NotesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
+		EBDF895B1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteListTableViewCellNoImage.swift; sourceTree = "<group>"; };
+		EBDF895C1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteListTableViewCellNoImage.xib; sourceTree = "<group>"; };
+		EBDF895F1DBD86FB0022EDC5 /* NoteListTableViewCellWithImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteListTableViewCellWithImage.swift; sourceTree = "<group>"; };
+		EBDF89601DBD86FB0022EDC5 /* NoteListTableViewCellWithImage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteListTableViewCellWithImage.xib; sourceTree = "<group>"; };
 		EBFF5DD11DB436AC00DB7154 /* MultiMediaNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiMediaNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBFF5DD41DB436AC00DB7154 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBFF5DD91DB436AC00DB7154 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +148,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB6827191DBD9351000E6541 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB68271A1DBD936B000E6541 /* Note.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EBDF89581DBD85810022EDC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EBDF895B1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.swift */,
+				EBDF895C1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.xib */,
+				EBDF895F1DBD86FB0022EDC5 /* NoteListTableViewCellWithImage.swift */,
+				EBDF89601DBD86FB0022EDC5 /* NoteListTableViewCellWithImage.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		EBFF5DC81DB436AC00DB7154 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +192,8 @@
 		EBFF5DD31DB436AC00DB7154 /* MultiMediaNotes */ = {
 			isa = PBXGroup;
 			children = (
+				EB6827191DBD9351000E6541 /* Model */,
+				EBDF89581DBD85810022EDC5 /* View */,
 				EBFF5DD41DB436AC00DB7154 /* AppDelegate.swift */,
 				EBFF5DD81DB436AC00DB7154 /* Main.storyboard */,
 				EBFF5DDE1DB436AD00DB7154 /* Assets.xcassets */,
@@ -311,8 +342,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBDF895E1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.xib in Resources */,
 				EBFF5DE21DB436AD00DB7154 /* LaunchScreen.storyboard in Resources */,
 				EBFF5DDF1DB436AD00DB7154 /* Assets.xcassets in Resources */,
+				EBDF89621DBD86FB0022EDC5 /* NoteListTableViewCellWithImage.xib in Resources */,
 				EBFF5DDA1DB436AC00DB7154 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -476,9 +509,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBDF89611DBD86FB0022EDC5 /* NoteListTableViewCellWithImage.swift in Sources */,
 				EBDF89571DBD83200022EDC5 /* NotesListViewController.swift in Sources */,
 				EBFF5DD51DB436AC00DB7154 /* AppDelegate.swift in Sources */,
+				EBDF895D1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.swift in Sources */,
 				EBFF5DDD1DB436AC00DB7154 /* MultiMediaNotes.xcdatamodeld in Sources */,
+				EB68271B1DBD936B000E6541 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

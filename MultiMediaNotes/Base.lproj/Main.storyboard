@@ -17,13 +17,30 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cGb-s4-fBH">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cGb-s4-fBH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="KdO-aR-9yu"/>
+                            <constraint firstItem="cGb-s4-fBH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jBm-rl-Bau"/>
+                            <constraint firstAttribute="trailing" secondItem="cGb-s4-fBH" secondAttribute="trailing" id="qu0-Fb-mvp"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cGb-s4-fBH" secondAttribute="bottom" id="urX-CT-IDk"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="SC5-Pc-WrD"/>
+                    <navigationItem key="navigationItem" id="SC5-Pc-WrD">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="7zv-Sa-c8k"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="90I-od-81J"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="cGb-s4-fBH" id="1Td-T6-sLg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="834" y="-8"/>
+            <point key="canvasLocation" x="832.79999999999995" y="-8.5457271364317844"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fO1-dd-PBD">
