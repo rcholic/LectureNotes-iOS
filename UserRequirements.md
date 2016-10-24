@@ -45,10 +45,13 @@
     * Drag the media anywhere on the note for better organization
 
 * 2.1.1 User Stories
-    - a. As a user, I can open the Lecture Notes App by tapping on the app icon. Once the App is open, I can view the list of saved lecture notes, and I see the following options at the navigation bar: 1. Edit, 2. Add.
+    - As a user, I can open the Lecture Notes App by tapping on the app icon. Once the App is open, I can view the list of saved lecture notes, and I see the following options at the navigation bar: 1. Edit, 2. Add.
 
-    - b. As a user, when I tap on a note title, the screen will redirect to the note detail page, where I can see free text drawing, pictures, and icons for playing the recorded audio/video (if any). When I tap on the play button for playing audio or video, the screen will start playing the media. I do not need to open the audio and video in another app.
-    
+    - As a user, when I tap on a note title, the screen will redirect to the note detail page, where I can see free text drawing, pictures, and icons for playing the recorded audio/video (if any). When I tap on the play button for playing audio or video, the screen will start playing the media. I do not need to open the audio and video in another app.
+
+    - As a user, I can delete a note in the list view of saved notes. By tapping on the `Edit` button in the navigation bar, the list view will show a `Delete` icon highlighted in red color next to each note title. When I tap on the `Delete` icon, the app will alert me for confirmation.
+
+    - As a user, I can edit a note. By tapping the note title in the list view, I am redirected to the note detail screen for editing. I can erase free text, delete pictures, audio and video files. For deletion operations, the app always alerts me for confirmation. Only when I confirm will the app delete the media files from storage.
 
 * 2.2 Data Storage
 
