@@ -44,6 +44,12 @@
     * Record voice/video and insert the recording to the note
     * Drag the media anywhere on the note for better organization
 
+* 2.1.1 User Stories
+    - a. As a user, I can open the Lecture Notes App by tapping on the app icon. Once the App is open, I can view the list of saved lecture notes, and I see the following options at the navigation bar: 1. Edit, 2. Add.
+
+    - b. As a user, when I tap on a note title, the screen will redirect to the note detail page, where I can see free text drawing, pictures, and icons for playing the recorded audio/video (if any). When I tap on the play button for playing audio or video, the screen will start playing the media. I do not need to open the audio and video in another app.
+    
+
 * 2.2 Data Storage
 
 This iOS app uses the `CoreData` for data storage by default, and it allows users to save the notes with the associated media files in their **iCloud** account. The app uses the *MVC* architecture pattern and, therefore a `LectureNote` class will be created for modeling the lecture notes and its association relationships with media files. Both notes and the associated media files are stored in the binary data format, and the association of note to media files will be one-to-many.
