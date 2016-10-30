@@ -12,6 +12,17 @@
 		4502123F9A1A5346FE099516 /* Pods_MultiMediaNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F42B4A627757C5BD3E5518 /* Pods_MultiMediaNotes.framework */; };
 		8963DC3DABC6AF6DE95D9A67 /* Pods_MultiMediaNotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB547D36C32DCF7AFFDBC3BF /* Pods_MultiMediaNotesUITests.framework */; };
 		A4BD377ABA9363992049925E /* Pods_MultiMediaNotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E417D5C6BBA9B358B469C216 /* Pods_MultiMediaNotesTests.framework */; };
+		EB5F8AD51DC6A90C00983E01 /* UIImageExtractExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AD41DC6A90C00983E01 /* UIImageExtractExt.swift */; };
+		EB5F8AD71DC6A92D00983E01 /* UIViewFrameExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AD61DC6A92D00983E01 /* UIViewFrameExt.swift */; };
+		EB5F8AD91DC6A9A000983E01 /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AD81DC6A9A000983E01 /* ToolBar.swift */; };
+		EB5F8ADB1DC6A9BF00983E01 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8ADA1DC6A9BF00983E01 /* Session.swift */; };
+		EB5F8ADD1DC6A9D900983E01 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8ADC1DC6A9D900983E01 /* Palette.swift */; };
+		EB5F8ADF1DC6A9EF00983E01 /* Drawing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8ADE1DC6A9EF00983E01 /* Drawing.swift */; };
+		EB5F8AE11DC6AA0500983E01 /* CircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AE01DC6AA0500983E01 /* CircleButton.swift */; };
+		EB5F8AE31DC6AA1B00983E01 /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AE21DC6AA1B00983E01 /* Canvas.swift */; };
+		EB5F8AE51DC6AA2C00983E01 /* Brush.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AE41DC6AA2C00983E01 /* Brush.swift */; };
+		EB5F8AE81DC6AAC700983E01 /* NXDrawViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AE61DC6AAC700983E01 /* NXDrawViewCell.swift */; };
+		EB5F8AE91DC6AAC700983E01 /* NXDrawViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5F8AE71DC6AAC700983E01 /* NXDrawViewCell.xib */; };
 		EB68271B1DBD936B000E6541 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68271A1DBD936B000E6541 /* Note.swift */; };
 		EBDF89531DBD71480022EDC5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF89521DBD71480022EDC5 /* SnapKit.framework */; };
 		EBDF89551DBD714D0022EDC5 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF89541DBD714D0022EDC5 /* SwiftDate.framework */; };
@@ -61,6 +72,17 @@
 		D2526CFC9B9CE66472DC0769 /* Pods-MultiMediaNotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiMediaNotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultiMediaNotesUITests/Pods-MultiMediaNotesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D758C9552E161E0A3BD4CBE2 /* Pods-MultiMediaNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiMediaNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultiMediaNotes/Pods-MultiMediaNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		E417D5C6BBA9B358B469C216 /* Pods_MultiMediaNotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiMediaNotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB5F8AD41DC6A90C00983E01 /* UIImageExtractExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtractExt.swift; sourceTree = "<group>"; };
+		EB5F8AD61DC6A92D00983E01 /* UIViewFrameExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewFrameExt.swift; sourceTree = "<group>"; };
+		EB5F8AD81DC6A9A000983E01 /* ToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
+		EB5F8ADA1DC6A9BF00983E01 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		EB5F8ADC1DC6A9D900983E01 /* Palette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		EB5F8ADE1DC6A9EF00983E01 /* Drawing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Drawing.swift; sourceTree = "<group>"; };
+		EB5F8AE01DC6AA0500983E01 /* CircleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleButton.swift; sourceTree = "<group>"; };
+		EB5F8AE21DC6AA1B00983E01 /* Canvas.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
+		EB5F8AE41DC6AA2C00983E01 /* Brush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brush.swift; sourceTree = "<group>"; };
+		EB5F8AE61DC6AAC700983E01 /* NXDrawViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NXDrawViewCell.swift; sourceTree = "<group>"; };
+		EB5F8AE71DC6AAC700983E01 /* NXDrawViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXDrawViewCell.xib; sourceTree = "<group>"; };
 		EB68271A1DBD936B000E6541 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		EBDF89521DBD71480022EDC5 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		EBDF89541DBD714D0022EDC5 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/SwiftDate/SwiftDate.framework"; sourceTree = "<group>"; };
@@ -148,6 +170,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB5F8AD31DC6A8E300983E01 /* NXDrawKit */ = {
+			isa = PBXGroup;
+			children = (
+				EB5F8AD41DC6A90C00983E01 /* UIImageExtractExt.swift */,
+				EB5F8AD61DC6A92D00983E01 /* UIViewFrameExt.swift */,
+				EB5F8AD81DC6A9A000983E01 /* ToolBar.swift */,
+				EB5F8ADA1DC6A9BF00983E01 /* Session.swift */,
+				EB5F8ADC1DC6A9D900983E01 /* Palette.swift */,
+				EB5F8ADE1DC6A9EF00983E01 /* Drawing.swift */,
+				EB5F8AE01DC6AA0500983E01 /* CircleButton.swift */,
+				EB5F8AE21DC6AA1B00983E01 /* Canvas.swift */,
+				EB5F8AE41DC6AA2C00983E01 /* Brush.swift */,
+			);
+			name = NXDrawKit;
+			sourceTree = "<group>";
+		};
 		EB6827191DBD9351000E6541 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,10 +197,13 @@
 		EBDF89581DBD85810022EDC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EB5F8AD31DC6A8E300983E01 /* NXDrawKit */,
 				EBDF895B1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.swift */,
 				EBDF895C1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.xib */,
 				EBDF895F1DBD86FB0022EDC5 /* NoteListTableViewCellWithImage.swift */,
 				EBDF89601DBD86FB0022EDC5 /* NoteListTableViewCellWithImage.xib */,
+				EB5F8AE61DC6AAC700983E01 /* NXDrawViewCell.swift */,
+				EB5F8AE71DC6AAC700983E01 /* NXDrawViewCell.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -346,6 +387,7 @@
 				EBFF5DE21DB436AD00DB7154 /* LaunchScreen.storyboard in Resources */,
 				EBFF5DDF1DB436AD00DB7154 /* Assets.xcassets in Resources */,
 				EBDF89621DBD86FB0022EDC5 /* NoteListTableViewCellWithImage.xib in Resources */,
+				EB5F8AE91DC6AAC700983E01 /* NXDrawViewCell.xib in Resources */,
 				EBFF5DDA1DB436AC00DB7154 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,11 +551,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB5F8ADB1DC6A9BF00983E01 /* Session.swift in Sources */,
+				EB5F8ADD1DC6A9D900983E01 /* Palette.swift in Sources */,
+				EB5F8AD91DC6A9A000983E01 /* ToolBar.swift in Sources */,
 				EBDF89611DBD86FB0022EDC5 /* NoteListTableViewCellWithImage.swift in Sources */,
 				EBDF89571DBD83200022EDC5 /* NotesListViewController.swift in Sources */,
+				EB5F8AE11DC6AA0500983E01 /* CircleButton.swift in Sources */,
 				EBFF5DD51DB436AC00DB7154 /* AppDelegate.swift in Sources */,
+				EB5F8AE31DC6AA1B00983E01 /* Canvas.swift in Sources */,
 				EBDF895D1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.swift in Sources */,
+				EB5F8AD71DC6A92D00983E01 /* UIViewFrameExt.swift in Sources */,
+				EB5F8ADF1DC6A9EF00983E01 /* Drawing.swift in Sources */,
+				EB5F8AD51DC6A90C00983E01 /* UIImageExtractExt.swift in Sources */,
+				EB5F8AE51DC6AA2C00983E01 /* Brush.swift in Sources */,
 				EBFF5DDD1DB436AC00DB7154 /* MultiMediaNotes.xcdatamodeld in Sources */,
+				EB5F8AE81DC6AAC700983E01 /* NXDrawViewCell.swift in Sources */,
 				EB68271B1DBD936B000E6541 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
