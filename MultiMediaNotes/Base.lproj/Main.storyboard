@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2f6-1s-bTR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2f6-1s-bTR">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -32,7 +33,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="SC5-Pc-WrD">
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="7zv-Sa-c8k"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="90I-od-81J"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="90I-od-81J">
+                            <connections>
+                                <segue destination="j8c-6M-zNj" kind="show" id="fRA-zh-UmU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="cGb-s4-fBH" id="1Td-T6-sLg"/>
@@ -41,6 +46,82 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="832.79999999999995" y="-8.5457271364317844"/>
+        </scene>
+        <!--Draw Table View Controller-->
+        <scene sceneID="BLr-zu-naA">
+            <objects>
+                <viewController id="dUN-xc-XyE" customClass="NXDrawTableViewController" customModule="MultiMediaNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Ve-Ea-39a"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sa9-9S-xYJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lpu-3A-huv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jLs-Pp-sZG">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Sa9-9S-xYJ" firstAttribute="top" secondItem="jLs-Pp-sZG" secondAttribute="bottom" id="HC7-lT-Dhy"/>
+                            <constraint firstItem="jLs-Pp-sZG" firstAttribute="top" secondItem="2Ve-Ea-39a" secondAttribute="bottom" id="Nlh-9g-hoy"/>
+                            <constraint firstItem="jLs-Pp-sZG" firstAttribute="leading" secondItem="lpu-3A-huv" secondAttribute="leading" id="S4L-Uk-FV0"/>
+                            <constraint firstAttribute="trailing" secondItem="jLs-Pp-sZG" secondAttribute="trailing" id="tTp-8O-X8O"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Lz-gV-acS">
+                        <nil key="title"/>
+                        <leftBarButtonItems>
+                            <barButtonItem style="plain" systemItem="cancel" id="THu-KU-Tnh">
+                                <color key="tintColor" red="1" green="0.020543188050000001" blue="0.14217721420000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="dismissView:" destination="dUN-xc-XyE" id="HKh-Vl-8w6"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="ic_delete" id="1Cl-9z-QFZ"/>
+                            <barButtonItem image="ic_brush" id="6a5-YR-pbQ">
+                                <connections>
+                                    <action selector="didTapPaletteButton:" destination="dUN-xc-XyE" id="lLN-ic-q90"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" systemItem="save" id="aAK-N9-NNp"/>
+                            <barButtonItem systemItem="add" id="gqN-2G-UW9">
+                                <connections>
+                                    <action selector="didTapAddPageButton:" destination="dUN-xc-XyE" id="aFn-Qz-Xho"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="gqN-2G-UW9" id="Lem-Mz-BvE"/>
+                        <outlet property="tableView" destination="jLs-Pp-sZG" id="CL3-Es-tnw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Rd-Hc-PfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2684" y="-0.44977511244377816"/>
+        </scene>
+        <!--Palette View Controller-->
+        <scene sceneID="72S-Pq-EJN">
+            <objects>
+                <viewController storyboardIdentifier="PaletteVC" id="KXY-iI-LDj" customClass="PaletteViewController" customModule="MultiMediaNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="h7f-Ry-FJg"/>
+                        <viewControllerLayoutGuide type="bottom" id="7R0-RT-wbb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KNO-9Y-wFO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ieq-Hw-T6K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3439" y="0.0"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fO1-dd-PBD">
@@ -60,5 +141,27 @@
             </objects>
             <point key="canvasLocation" x="29.600000000000001" y="-7.6461769115442282"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PBX-wb-9ZM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="j8c-6M-zNj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fV7-zI-tni">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dUN-xc-XyE" kind="relationship" relationship="rootViewController" id="4f0-bk-DgK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gRq-xo-8mh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1869.5999999999999" y="-0.44977511244377816"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="ic_brush" width="24" height="24"/>
+        <image name="ic_delete" width="24" height="24"/>
+    </resources>
 </document>

@@ -16,6 +16,11 @@ import UIKit
     func brush() -> Brush?
 }
 
+@objc public protocol ExtendedCanvasDelegate: CanvasDelegate {
+    @objc optional func viewDrawStartedDrawing()
+    @objc optional func viewDrawEndedDrawing()
+}
+
 
 open class Canvas: UIView, UITableViewDelegate
 {

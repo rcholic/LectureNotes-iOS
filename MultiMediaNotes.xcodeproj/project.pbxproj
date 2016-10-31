@@ -23,6 +23,8 @@
 		EB5F8AE51DC6AA2C00983E01 /* Brush.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AE41DC6AA2C00983E01 /* Brush.swift */; };
 		EB5F8AE81DC6AAC700983E01 /* NXDrawViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AE61DC6AAC700983E01 /* NXDrawViewCell.swift */; };
 		EB5F8AE91DC6AAC700983E01 /* NXDrawViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5F8AE71DC6AAC700983E01 /* NXDrawViewCell.xib */; };
+		EB5F8AEC1DC6AE9800983E01 /* NXDrawTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AEB1DC6AE9800983E01 /* NXDrawTableViewController.swift */; };
+		EB5F8AEE1DC6BCAA00983E01 /* PaletteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AED1DC6BCAA00983E01 /* PaletteViewController.swift */; };
 		EB68271B1DBD936B000E6541 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68271A1DBD936B000E6541 /* Note.swift */; };
 		EBDF89531DBD71480022EDC5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF89521DBD71480022EDC5 /* SnapKit.framework */; };
 		EBDF89551DBD714D0022EDC5 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF89541DBD714D0022EDC5 /* SwiftDate.framework */; };
@@ -83,6 +85,8 @@
 		EB5F8AE41DC6AA2C00983E01 /* Brush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brush.swift; sourceTree = "<group>"; };
 		EB5F8AE61DC6AAC700983E01 /* NXDrawViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NXDrawViewCell.swift; sourceTree = "<group>"; };
 		EB5F8AE71DC6AAC700983E01 /* NXDrawViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXDrawViewCell.xib; sourceTree = "<group>"; };
+		EB5F8AEB1DC6AE9800983E01 /* NXDrawTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NXDrawTableViewController.swift; sourceTree = "<group>"; };
+		EB5F8AED1DC6BCAA00983E01 /* PaletteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaletteViewController.swift; sourceTree = "<group>"; };
 		EB68271A1DBD936B000E6541 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		EBDF89521DBD71480022EDC5 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		EBDF89541DBD714D0022EDC5 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/SwiftDate/SwiftDate.framework"; sourceTree = "<group>"; };
@@ -186,6 +190,16 @@
 			name = NXDrawKit;
 			sourceTree = "<group>";
 		};
+		EB5F8AEA1DC6AE3E00983E01 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBDF89561DBD83200022EDC5 /* NotesListViewController.swift */,
+				EB5F8AEB1DC6AE9800983E01 /* NXDrawTableViewController.swift */,
+				EB5F8AED1DC6BCAA00983E01 /* PaletteViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		EB6827191DBD9351000E6541 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +247,7 @@
 		EBFF5DD31DB436AC00DB7154 /* MultiMediaNotes */ = {
 			isa = PBXGroup;
 			children = (
+				EB5F8AEA1DC6AE3E00983E01 /* Controller */,
 				EB6827191DBD9351000E6541 /* Model */,
 				EBDF89581DBD85810022EDC5 /* View */,
 				EBFF5DD41DB436AC00DB7154 /* AppDelegate.swift */,
@@ -241,7 +256,6 @@
 				EBFF5DE01DB436AD00DB7154 /* LaunchScreen.storyboard */,
 				EBFF5DE31DB436AD00DB7154 /* Info.plist */,
 				EBFF5DDB1DB436AC00DB7154 /* MultiMediaNotes.xcdatamodeld */,
-				EBDF89561DBD83200022EDC5 /* NotesListViewController.swift */,
 			);
 			path = MultiMediaNotes;
 			sourceTree = "<group>";
@@ -560,6 +574,8 @@
 				EBFF5DD51DB436AC00DB7154 /* AppDelegate.swift in Sources */,
 				EB5F8AE31DC6AA1B00983E01 /* Canvas.swift in Sources */,
 				EBDF895D1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.swift in Sources */,
+				EB5F8AEC1DC6AE9800983E01 /* NXDrawTableViewController.swift in Sources */,
+				EB5F8AEE1DC6BCAA00983E01 /* PaletteViewController.swift in Sources */,
 				EB5F8AD71DC6A92D00983E01 /* UIViewFrameExt.swift in Sources */,
 				EB5F8ADF1DC6A9EF00983E01 /* Drawing.swift in Sources */,
 				EB5F8AD51DC6A90C00983E01 /* UIImageExtractExt.swift in Sources */,
