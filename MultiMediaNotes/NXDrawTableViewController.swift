@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import WYPopoverController
 
 class NXDrawTableViewController: UIViewController {
 
+    
+    @IBOutlet weak var brushButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
-    let cellIdentifier = "DrawViewCell"
     
+    let cellIdentifier = "DrawViewCell"
+    var popover: WYPopoverController? = .none
     var curNote: Note? = nil
     var paletteView: Palette = Palette()
     var canvasViews: [Canvas] = []
@@ -46,9 +50,35 @@ class NXDrawTableViewController: UIViewController {
         let paletteVC = self.storyboard?.instantiateViewController(withIdentifier: "PaletteVC") as! PaletteViewController
         paletteVC.preferredContentSize = CGSize(width: view.bounds.width, height: view.bounds.height/5)
         paletteVC.title = "Select Brush Color and Width"
-        paletteVC.modalPresentationStyle = UIModalPresentationStyle.currentContext
+        paletteVC.modalPresentationStyle = UIModalPresentationStyle.formSheet
         paletteVC.isModalInPopover = false
         paletteVC.delegate = self
+        
+//        self.present(paletteVC, animated: true, completion: nil)
+        
+        let contentVC = UINavigationController(rootViewController: paletteVC) // or palleteVC ?
+        
+        if popover == nil {
+            // pass thru
+            popover = WYPopoverController(contentViewController: contentVC)
+            // popover.passthroughViews = [btn!]
+            popover!.theme = WYPopoverTheme.forIOS7()
+            popover!.beginThemeUpdates()
+//            popover!.theme.outerShadowColor = MaterialColor.deepOrange.accent2
+            popover!.theme.outerShadowColor = UIColor.lightGray
+            popover!.theme.outerShadowOffset = CGSize(width: 0, height: 0)
+            popover!.theme.outerShadowColor = UIColor.black
+            popover!.theme.borderWidth = 3
+//            popover!.theme.fillTopColor = MaterialColor.orange.base
+//            popover!.theme.fillBottomColor = MaterialColor.orange.base
+            popover!.endThemeUpdates()
+            
+            popover!.popoverContentSize = CGSize(width: self.view.bounds.width, height: self.view.bounds.height/3)
+            popover!.popoverLayoutMargins = UIEdgeInsetsMake(10, 10, 10, 10)
+            popover!.delegate = self
+        }
+        
+        popover!.presentPopover(from: brushButton, permittedArrowDirections: .up, animated: true, options: .fadeWithScale)
     }
     
     
@@ -198,6 +228,22 @@ extension NXDrawTableViewController: PaletteViewControllerDelegate {
     func retrieveWidth(width: CGFloat) {
         self.paletteView.currentBrush().width = width
     }
+}
+
+extension NXDrawTableViewController: WYPopoverControllerDelegate {
+    
+    func popoverControllerShouldDismissPopover(popoverController: WYPopoverController!) -> Bool {
+        return true
+    }
+    
+    func popoverControllerDidDismissPopover(popoverController: WYPopoverController!) {
+        print("popover dismissed")
+    }
+    
+    //    func addObserver(observer: NSObject, forKeyPath keyPath: String, options: NSKeyValueObservingOptions, context: UnsafeMutablePointer<Void>) {
+    //        <#code#>
+    //    }
+    
 }
 
 

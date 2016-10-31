@@ -7,6 +7,7 @@ target 'MultiMediaNotes' do
   # Comment this line if you're not using Swift and don't want to use dynamic frameworks
     pod 'SnapKit'
     pod 'SwiftDate', '~> 4.0'
+    pod 'WYPopoverController', '~> 0.2.2'
 
   # Pods for MultiMediaNotes
 

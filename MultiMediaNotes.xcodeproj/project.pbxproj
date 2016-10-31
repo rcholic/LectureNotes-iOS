@@ -25,6 +25,7 @@
 		EB5F8AE91DC6AAC700983E01 /* NXDrawViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5F8AE71DC6AAC700983E01 /* NXDrawViewCell.xib */; };
 		EB5F8AEC1DC6AE9800983E01 /* NXDrawTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AEB1DC6AE9800983E01 /* NXDrawTableViewController.swift */; };
 		EB5F8AEE1DC6BCAA00983E01 /* PaletteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AED1DC6BCAA00983E01 /* PaletteViewController.swift */; };
+		EB5F8AF01DC6C21B00983E01 /* WYPopoverController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5F8AEF1DC6C21B00983E01 /* WYPopoverController.framework */; };
 		EB68271B1DBD936B000E6541 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68271A1DBD936B000E6541 /* Note.swift */; };
 		EBDF89531DBD71480022EDC5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF89521DBD71480022EDC5 /* SnapKit.framework */; };
 		EBDF89551DBD714D0022EDC5 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF89541DBD714D0022EDC5 /* SwiftDate.framework */; };
@@ -87,6 +88,7 @@
 		EB5F8AE71DC6AAC700983E01 /* NXDrawViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NXDrawViewCell.xib; sourceTree = "<group>"; };
 		EB5F8AEB1DC6AE9800983E01 /* NXDrawTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NXDrawTableViewController.swift; sourceTree = "<group>"; };
 		EB5F8AED1DC6BCAA00983E01 /* PaletteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaletteViewController.swift; sourceTree = "<group>"; };
+		EB5F8AEF1DC6C21B00983E01 /* WYPopoverController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WYPopoverController.framework; path = "Pods/../build/Debug-iphoneos/WYPopoverController/WYPopoverController.framework"; sourceTree = "<group>"; };
 		EB68271A1DBD936B000E6541 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		EBDF89521DBD71480022EDC5 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		EBDF89541DBD714D0022EDC5 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/SwiftDate/SwiftDate.framework"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB5F8AF01DC6C21B00983E01 /* WYPopoverController.framework in Frameworks */,
 				EBDF89551DBD714D0022EDC5 /* SwiftDate.framework in Frameworks */,
 				EBDF89531DBD71480022EDC5 /* SnapKit.framework in Frameworks */,
 				4502123F9A1A5346FE099516 /* Pods_MultiMediaNotes.framework in Frameworks */,
@@ -163,6 +166,7 @@
 		C28ADEDBE3EDEADC859C49A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB5F8AEF1DC6C21B00983E01 /* WYPopoverController.framework */,
 				EBDF89541DBD714D0022EDC5 /* SwiftDate.framework */,
 				EBDF89521DBD71480022EDC5 /* SnapKit.framework */,
 				96F42B4A627757C5BD3E5518 /* Pods_MultiMediaNotes.framework */,
@@ -736,6 +740,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U6H8QF8EBV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/WYPopoverController",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = MultiMediaNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
@@ -754,6 +762,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = U6H8QF8EBV;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/WYPopoverController",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = MultiMediaNotes/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;

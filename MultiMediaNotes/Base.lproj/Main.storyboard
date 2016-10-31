@@ -98,6 +98,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="gqN-2G-UW9" id="Lem-Mz-BvE"/>
+                        <outlet property="brushButton" destination="6a5-YR-pbQ" id="yUx-hR-4pv"/>
                         <outlet property="tableView" destination="jLs-Pp-sZG" id="CL3-Es-tnw"/>
                     </connections>
                 </viewController>
