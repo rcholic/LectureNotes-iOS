@@ -31,6 +31,10 @@ class NXDrawViewCell: UITableViewCell {
         
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touches began in cell")
+    }
+    
     override func layoutSubviews() {
         
         guard let canvasView = canvasView else { return }
@@ -56,6 +60,7 @@ class NXDrawViewCell: UITableViewCell {
             make.right.equalTo(canvasView).offset(8)
         }
         
+        viewContainer.bringSubview(toFront: canvasView)
         viewContainer.bringSubview(toFront: deleteButton)        
     }
     

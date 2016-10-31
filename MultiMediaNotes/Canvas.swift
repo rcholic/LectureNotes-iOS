@@ -122,6 +122,7 @@ open class Canvas: UIView, UITableViewDelegate
     
     // MARK: - Override Methods
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touches began!")
         self.saved = false
         self.pointMoved = false
         self.pointIndex = 0

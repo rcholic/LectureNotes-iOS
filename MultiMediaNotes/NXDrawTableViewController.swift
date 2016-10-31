@@ -32,7 +32,7 @@ class NXDrawTableViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // SETUP
+        setupUI()
     }
     
     @IBAction func didTapAddPageButton(_ sender: AnyObject) {
@@ -81,6 +81,15 @@ class NXDrawTableViewController: UIViewController {
         popover!.presentPopover(from: brushButton, permittedArrowDirections: .up, animated: true, options: .fadeWithScale)
     }
     
+    private func setupUI() {
+        paletteView.delegate = self
+        paletteView.setup()
+        paletteView.alpha = 0
+        paletteView.isHidden = true
+        self.view.addSubview(paletteView)
+        
+        // TODO: load notes
+    }
     
     private func generateCanvas() -> Canvas {
         let canvasView = Canvas()
@@ -88,6 +97,7 @@ class NXDrawTableViewController: UIViewController {
         canvasView.layer.borderWidth = 2.0
         canvasView.layer.cornerRadius = 5.0
         canvasView.clipsToBounds = true
+        canvasView.delegate = self
         
         return canvasView
     }
@@ -100,15 +110,26 @@ class NXDrawTableViewController: UIViewController {
         tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0)
         tableView.separatorStyle = .none
         tableView.contentSize = self.view.bounds.size
-//        tableView.contentSize = CGSize(self.tableView.frame.size.width, tableView.frame.size.height)
-        
         tableView.bounces = false // disable the bounce
         tableView.bouncesZoom = false
+        tableView.allowsSelection = false
+        
         // tableView.scrollEnabled = false // disable scroll
         
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    private lazy var visibleCellPaths: [IndexPath] = {
+        let paths = self.tableView.indexPathsForVisibleRows ?? [IndexPath]()
+
+        print("paths.count: \(paths.count)")
+        paths.forEach {
+            print("visible index: \($0)")
+        }
+        
+        return paths
+    }()
 }
 
 extension NXDrawTableViewController: UITableViewDataSource {
