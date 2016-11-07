@@ -8,10 +8,12 @@
 
 import UIKit
 import WYPopoverController
+import IQAudioRecorderController
 
 class NXDrawTableViewController: UIViewController {
 
     
+    @IBOutlet weak var audioRecorder: UIBarButtonItem!
     @IBOutlet weak var brushButton: UIBarButtonItem!
     @IBOutlet weak var addButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
@@ -40,6 +42,19 @@ class NXDrawTableViewController: UIViewController {
         tableView.reloadData()
         let indexPath = IndexPath(row: canvasViews.count-1, section: 0)
         tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
+    
+    
+    @IBAction func didTapAudioRecordBtn(_ sender: AnyObject) {
+        let recorderVC = IQAudioRecorderViewController()
+        recorderVC.delegate = self
+        recorderVC.maximumRecordDuration = 10 // unlimited ??
+        recorderVC.barStyle = .blackTranslucent
+        recorderVC.allowCropping = true
+        recorderVC.audioFormat = IQAudioFormat._m4a
+        
+//        self.present(recorderVC, animated: true, completion: nil)
+        self.presentBlurredAudioRecorderViewControllerAnimated(recorderVC)
     }
     
     @IBAction func dismissView(_ sender: AnyObject) {
@@ -265,6 +280,19 @@ extension NXDrawTableViewController: WYPopoverControllerDelegate {
     //        <#code#>
     //    }
     
+}
+
+extension NXDrawTableViewController: IQAudioRecorderViewControllerDelegate {
+    
+    func audioRecorderControllerDidCancel(_ controller: IQAudioRecorderViewController) {
+        print("audio recorder canceled")
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func audioRecorderController(_ controller: IQAudioRecorderViewController, didFinishWithAudioAtPath filePath: String) {
+        print("finished recording, filePath: \(filePath)")
+        controller.dismiss(animated: true, completion: nil)
+    }
 }
 
 

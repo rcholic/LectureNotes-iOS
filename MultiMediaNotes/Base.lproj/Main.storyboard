@@ -86,6 +86,11 @@
                                     <action selector="didTapPaletteButton:" destination="dUN-xc-XyE" id="lLN-ic-q90"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem image="ic_mic_black" id="iMR-l2-IWw">
+                                <connections>
+                                    <action selector="didTapAudioRecordBtn:" destination="dUN-xc-XyE" id="51B-J4-XcE"/>
+                                </connections>
+                            </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem style="plain" systemItem="save" id="aAK-N9-NNp"/>
@@ -98,6 +103,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addButton" destination="gqN-2G-UW9" id="Lem-Mz-BvE"/>
+                        <outlet property="audioRecorder" destination="iMR-l2-IWw" id="R34-4d-2QV"/>
                         <outlet property="brushButton" destination="6a5-YR-pbQ" id="yUx-hR-4pv"/>
                         <outlet property="tableView" destination="jLs-Pp-sZG" id="CL3-Es-tnw"/>
                     </connections>
@@ -122,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ieq-Hw-T6K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3439" y="0.0"/>
+            <point key="canvasLocation" x="3412" y="0.0"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fO1-dd-PBD">
@@ -164,5 +170,6 @@
     <resources>
         <image name="ic_brush" width="24" height="24"/>
         <image name="ic_delete" width="24" height="24"/>
+        <image name="ic_mic_black" width="24" height="24"/>
     </resources>
 </document>

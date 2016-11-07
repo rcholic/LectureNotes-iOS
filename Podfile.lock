@@ -1,18 +1,24 @@
 PODS:
+  - IQAudioRecorderController (1.2.0):
+    - SCSiriWaveformView
+  - SCSiriWaveformView (1.0.3)
   - SnapKit (3.0.2)
   - SwiftDate (4.0.7)
   - WYPopoverController (0.2.2)
 
 DEPENDENCIES:
+  - IQAudioRecorderController
   - SnapKit
   - SwiftDate (~> 4.0)
   - WYPopoverController (~> 0.2.2)
 
 SPEC CHECKSUMS:
+  IQAudioRecorderController: 1d46d99330cb2c9381568665d123cf435460a43e
+  SCSiriWaveformView: b8b2756af42addcd31900c3945f24edafefb5395
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SwiftDate: 0efb04a6751b1ab804049b2b09a69848cd304c12
   WYPopoverController: 00d879c25bddd1fd873dcc21aa98c8308d7f1555
 
-PODFILE CHECKSUM: f3db03756ea7e3d33a13449147795004119b40bc
+PODFILE CHECKSUM: 05f492bed6f538ab38775a842c6e94403a686197
 
 COCOAPODS: 1.1.1

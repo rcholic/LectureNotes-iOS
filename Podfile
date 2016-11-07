@@ -8,6 +8,7 @@ target 'MultiMediaNotes' do
     pod 'SnapKit'
     pod 'SwiftDate', '~> 4.0'
     pod 'WYPopoverController', '~> 0.2.2'
+    pod 'IQAudioRecorderController'
 
   # Pods for MultiMediaNotes
 
