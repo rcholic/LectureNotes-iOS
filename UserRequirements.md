@@ -52,8 +52,8 @@
     - As a user, I can delete a note in the list view of saved notes. By tapping on the `Edit` button in the navigation bar, the list view will show a `Delete` icon highlighted in red color next to each note title. When I tap on the `Delete` icon, the app will alert me for confirmation.
 
     - As a user, I can edit a note. By tapping the note title in the list view, I am redirected to the note detail screen for editing. I can erase free text, delete pictures, audio and video files. For deletion operations, the app always alerts me for confirmation. Only when I confirm will the app delete the media files from storage.
-    =====
-    **Audio Recording**
+
+    **Audio Recording:**
 
     - As a user, I can record audios. By tapping the microphone button on the top tool bar of the Add Note screen, the prompt for recording voice pops up. I can tap on the record button to start recording and tap on the pause button to pause recording. Once done, I will tap on the **Done** button, and the file path for the recorded audio is saved automatically with the note in the database/iOS Cloud.
 
