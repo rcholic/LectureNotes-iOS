@@ -53,8 +53,8 @@
 
     - As a user, I can edit a note. By tapping the note title in the list view, I am redirected to the note detail screen for editing. I can erase free text, delete pictures, audio and video files. For deletion operations, the app always alerts me for confirmation. Only when I confirm will the app delete the media files from storage.
     =====
-    #### Audio Recording ###
-    
+    **Audio Recording**
+
     - As a user, I can record audios. By tapping the microphone button on the top tool bar of the Add Note screen, the prompt for recording voice pops up. I can tap on the record button to start recording and tap on the pause button to pause recording. Once done, I will tap on the **Done** button, and the file path for the recorded audio is saved automatically with the note in the database/iOS Cloud.
 
     - As a user, I can edit recorded audio by trimming the start and the end time of the audio. When I trim the audio, I can replay the audio for the untrimmed duration. Once trimming is committed to an audio, the new audio will overwrite the old audio for persistence.
