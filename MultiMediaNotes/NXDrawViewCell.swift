@@ -19,7 +19,7 @@ class NXDrawViewCell: UITableViewCell {
     var deleteButton: UIButton = UIButton(type: UIButtonType.custom)
     weak var delegate: NXDrawViewCellDelegate?
     weak var canvasView: Canvas?
-    weak var canvasDelegate: ExtendedCanvasDelegate? // CanvasDelegate?
+    weak var canvasDelegate:  ExtendedCanvasDelegate? // CanvasDelegate? //
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -49,19 +49,18 @@ class NXDrawViewCell: UITableViewCell {
         deleteButton.layer.borderColor = UIColor.clear.cgColor
         deleteButton.translatesAutoresizingMaskIntoConstraints = false
         deleteButton.setBackgroundImage(UIImage(named: "btn_icon_sticker_delete"), for: .normal)
-        
-        deleteButton.addTarget(self, action: #selector(self.deleteCell), for: .touchUpInside)
+                
+        deleteButton.addTarget(self, action: #selector(self.deleteCell(sender:)), for: .touchUpInside)
 
         viewContainer.addSubview(deleteButton)
         
-        //        canvasView.addSubview(deleteButton)
         deleteButton.snp.makeConstraints { (make) in
             make.top.equalTo(canvasView).offset(-6)
             make.right.equalTo(canvasView).offset(8)
         }
         
         viewContainer.bringSubview(toFront: canvasView)
-        viewContainer.bringSubview(toFront: deleteButton)        
+        viewContainer.bringSubview(toFront: deleteButton)
     }
     
     @objc private func deleteCell(sender: AnyObject) {

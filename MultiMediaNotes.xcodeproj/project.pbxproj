@@ -28,6 +28,7 @@
 		EB5F8AF01DC6C21B00983E01 /* WYPopoverController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5F8AEF1DC6C21B00983E01 /* WYPopoverController.framework */; };
 		EB657A061DD013B40087039B /* IQAudioRecorderController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB657A051DD013B40087039B /* IQAudioRecorderController.framework */; };
 		EB68271B1DBD936B000E6541 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68271A1DBD936B000E6541 /* Note.swift */; };
+		EB868C0F1DD91E3400323B60 /* DemoDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB868C0E1DD91E3400323B60 /* DemoDrawViewController.swift */; };
 		EBDF89531DBD71480022EDC5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF89521DBD71480022EDC5 /* SnapKit.framework */; };
 		EBDF89551DBD714D0022EDC5 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF89541DBD714D0022EDC5 /* SwiftDate.framework */; };
 		EBDF89571DBD83200022EDC5 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF89561DBD83200022EDC5 /* NotesListViewController.swift */; };
@@ -92,6 +93,7 @@
 		EB5F8AEF1DC6C21B00983E01 /* WYPopoverController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WYPopoverController.framework; path = "Pods/../build/Debug-iphoneos/WYPopoverController/WYPopoverController.framework"; sourceTree = "<group>"; };
 		EB657A051DD013B40087039B /* IQAudioRecorderController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQAudioRecorderController.framework; path = "Pods/../build/Debug-iphoneos/IQAudioRecorderController/IQAudioRecorderController.framework"; sourceTree = "<group>"; };
 		EB68271A1DBD936B000E6541 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		EB868C0E1DD91E3400323B60 /* DemoDrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoDrawViewController.swift; sourceTree = "<group>"; };
 		EBDF89521DBD71480022EDC5 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		EBDF89541DBD714D0022EDC5 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/SwiftDate/SwiftDate.framework"; sourceTree = "<group>"; };
 		EBDF89561DBD83200022EDC5 /* NotesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				EBDF89561DBD83200022EDC5 /* NotesListViewController.swift */,
 				EB5F8AEB1DC6AE9800983E01 /* NXDrawTableViewController.swift */,
 				EB5F8AED1DC6BCAA00983E01 /* PaletteViewController.swift */,
+				EB868C0E1DD91E3400323B60 /* DemoDrawViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				EB5F8AE51DC6AA2C00983E01 /* Brush.swift in Sources */,
 				EBFF5DDD1DB436AC00DB7154 /* MultiMediaNotes.xcdatamodeld in Sources */,
 				EB5F8AE81DC6AAC700983E01 /* NXDrawViewCell.swift in Sources */,
+				EB868C0F1DD91E3400323B60 /* DemoDrawViewController.swift in Sources */,
 				EB68271B1DBD936B000E6541 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

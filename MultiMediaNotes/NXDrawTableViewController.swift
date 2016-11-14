@@ -28,8 +28,6 @@ class NXDrawTableViewController: UIViewController {
         super.viewDidLoad()
         
         configureTableView()
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -170,7 +168,6 @@ extension NXDrawTableViewController: UITableViewDataSource {
 }
 
 extension NXDrawTableViewController: UITableViewDelegate {
-    // TODO: implement the delegate for table
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
@@ -180,6 +177,7 @@ extension NXDrawTableViewController: UITableViewDelegate {
 extension NXDrawTableViewController: ExtendedCanvasDelegate {
     
     func brush() -> Brush? {
+        print("returnning current brush from paletteView")
         return self.paletteView.currentBrush()
     }
     
