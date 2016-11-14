@@ -49,7 +49,7 @@ class NXDrawViewCell: UITableViewCell {
         deleteButton.layer.borderColor = UIColor.clear.cgColor
         deleteButton.translatesAutoresizingMaskIntoConstraints = false
         deleteButton.setBackgroundImage(UIImage(named: "btn_icon_sticker_delete"), for: .normal)
-                
+        
         deleteButton.addTarget(self, action: #selector(self.deleteCell(sender:)), for: .touchUpInside)
 
         viewContainer.addSubview(deleteButton)

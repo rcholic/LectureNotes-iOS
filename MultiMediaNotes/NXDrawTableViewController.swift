@@ -158,8 +158,9 @@ extension NXDrawTableViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! NXDrawViewCell
         
-        cell.delegate = self // TODO: cell delegate - delete
+        cell.delegate = self // cell delegate - delete
         cell.canvasView = canvasViews[indexPath.row]
+//        cell.canvasView!.delegate = self
         cell.canvasDelegate = self  // TODO: canvas delegate
         cell.deleteButton.tag = indexPath.row
         
@@ -214,8 +215,7 @@ extension NXDrawTableViewController: ExtendedCanvasDelegate {
     func viewDrawEndedDrawing() {
         print("Ended Drawing")
         tableView.isScrollEnabled = true
-    }
-    
+    }    
 }
 
 extension NXDrawTableViewController: NXDrawViewCellDelegate {
