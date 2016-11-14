@@ -15,7 +15,7 @@ import SnapKit
 
 class NXDrawViewCell: UITableViewCell {
 
-    @IBOutlet weak var viewContainer: UIView!
+//    @IBOutlet weak var viewContainer: UIView!
     var deleteButton: UIButton = UIButton(type: UIButtonType.custom)
     weak var delegate: NXDrawViewCellDelegate?
     weak var canvasView: Canvas?
@@ -38,7 +38,8 @@ class NXDrawViewCell: UITableViewCell {
     override func layoutSubviews() {
         
         guard let canvasView = canvasView else { return }
-        self.viewContainer.addSubview(canvasView)
+//        self.viewContainer.addSubview(canvasView)
+        self.contentView.addSubview(canvasView)
         canvasView.delegate = canvasDelegate
         canvasView.snp.makeConstraints { (make) in
             make.left.equalTo(self.contentView).offset(10)
@@ -52,15 +53,16 @@ class NXDrawViewCell: UITableViewCell {
         
         deleteButton.addTarget(self, action: #selector(self.deleteCell(sender:)), for: .touchUpInside)
 
-        viewContainer.addSubview(deleteButton)
+//        viewContainer.addSubview(deleteButton)
+        self.contentView.addSubview(deleteButton)
         
         deleteButton.snp.makeConstraints { (make) in
             make.top.equalTo(canvasView).offset(-6)
             make.right.equalTo(canvasView).offset(8)
         }
         
-        viewContainer.bringSubview(toFront: canvasView)
-        viewContainer.bringSubview(toFront: deleteButton)
+        contentView.bringSubview(toFront: canvasView)
+        contentView.bringSubview(toFront: deleteButton)
     }
     
     @objc private func deleteCell(sender: AnyObject) {
