@@ -15,24 +15,25 @@ import UIKit
 }
 
 class PaletteViewController: UIViewController {
-    weak var paletteView: Palette?
-    weak var delegate: PaletteViewControllerDelegate?
+    weak var paletteView: Palette? // needs to be passed in
+    weak var delegate: PaletteViewControllerDelegate? // needs to be passed in
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPalette()
-        
         print("PaletteVC loaded!")
     }
     
     private func setupPalette() {
         self.view.backgroundColor = UIColor.white
-        let paletteView = Palette()
-        paletteView.delegate = self
-        paletteView.setup()
-        self.view.addSubview(paletteView)
-        self.paletteView = paletteView
-        paletteView.snp.makeConstraints { (make) in
+
+        if paletteView == nil {
+            paletteView = Palette()
+        }
+        paletteView!.setup()
+        paletteView!.delegate = self
+        self.view.addSubview(paletteView!)
+        paletteView!.snp.makeConstraints { (make) in
             make.left.right.bottom.top.equalTo(self.view)
         }
     }
@@ -41,24 +42,23 @@ class PaletteViewController: UIViewController {
 // MARK: - PaletteDelegate
 extension PaletteViewController: PaletteDelegate
 {
-    func didChangeBrushColor(color: UIColor) {
-        delegate?.retrieveColor(color: color)
+    private func didChangeBrushColor(color: UIColor) {
         print("did change brush color: \(color)")
+        delegate?.retrieveColor(color: color)
     }
     
-    func didChangeBrushAlpha(alpha: CGFloat) {
+    private func didChangeBrushAlpha(alpha: CGFloat) {
         delegate?.retrieveAlpha(alpha: alpha)
         print("did change brush alpha: \(alpha)")
     }
     
-    func didChangeBrushWidth(width: CGFloat) {
+    private func didChangeBrushWidth(width: CGFloat) {
         delegate?.retrieveWidth(width: width)
         print("brush width: \(width)")
     }
     
-    
     // tag can be 1 ... 12
-    func colorWithTag(tag: NSInteger) -> UIColor? {
+    func colorWithTag(_ tag: NSInteger) -> UIColor? {
         if tag == 4 {
             // if you return clearColor, it will be eraser
             return UIColor.clear

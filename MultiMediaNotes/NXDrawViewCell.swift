@@ -31,14 +31,9 @@ class NXDrawViewCell: UITableViewCell {
         
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touches began in cell")
-    }
-    
     override func layoutSubviews() {
         
         guard let canvasView = canvasView else { return }
-//        self.viewContainer.addSubview(canvasView)
         self.contentView.addSubview(canvasView)
         canvasView.delegate = canvasDelegate
         canvasView.snp.makeConstraints { (make) in

@@ -26,7 +26,6 @@ class NXDrawTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureTableView()
     }
     
@@ -51,7 +50,6 @@ class NXDrawTableViewController: UIViewController {
         recorderVC.allowCropping = true
         recorderVC.audioFormat = IQAudioFormat._m4a
         
-//        self.present(recorderVC, animated: true, completion: nil)
         self.presentBlurredAudioRecorderViewControllerAnimated(recorderVC)
     }
     
@@ -65,11 +63,10 @@ class NXDrawTableViewController: UIViewController {
         paletteVC.title = "Select Brush Color and Width"
         paletteVC.modalPresentationStyle = UIModalPresentationStyle.formSheet
         paletteVC.isModalInPopover = false
-        paletteVC.delegate = self
+//        paletteVC.delegate = self
+        paletteVC.paletteView = paletteView
         
-//        self.present(paletteVC, animated: true, completion: nil)
-        
-        let contentVC = UINavigationController(rootViewController: paletteVC) // or palleteVC ?
+        let contentVC = UINavigationController(rootViewController: paletteVC)
         
         if popover == nil {
             // pass thru
@@ -95,11 +92,12 @@ class NXDrawTableViewController: UIViewController {
     }
     
     private func setupUI() {
-        paletteView.delegate = self
-        paletteView.setup()
-        paletteView.alpha = 0
-        paletteView.isHidden = true
-        self.view.addSubview(paletteView)
+//        paletteView.delegate = self
+//        paletteView.setup()
+//        paletteView.alpha = 0
+//        paletteView.width = 1 // ??
+//        paletteView.isHidden = true
+//        self.view.addSubview(paletteView)
         
         // TODO: load notes
     }
@@ -110,7 +108,7 @@ class NXDrawTableViewController: UIViewController {
         canvasView.layer.borderWidth = 2.0
         canvasView.layer.cornerRadius = 5.0
         canvasView.clipsToBounds = true
-        canvasView.delegate = self
+//        canvasView.delegate = self
         
         return canvasView
     }
@@ -178,7 +176,7 @@ extension NXDrawTableViewController: UITableViewDelegate {
 extension NXDrawTableViewController: ExtendedCanvasDelegate {
     
     func brush() -> Brush? {
-        print("returnning current brush from paletteView")
+        print("returning current brush from paletteView")
         return self.paletteView.currentBrush()
     }
     
@@ -228,34 +226,15 @@ extension NXDrawTableViewController: NXDrawViewCellDelegate {
     }
 }
 
-extension NXDrawTableViewController: PaletteDelegate {
-    func didChangeBrushColor(_ color: UIColor) {
-        paletteView.currentBrush().color = color
-    }
-    
-    func didChangeBrushAlpha(_ alpha: CGFloat) {
-        paletteView.currentBrush().alpha = alpha
-    }
-    
-    func didChangeBrushWidth(_ width: CGFloat) {
-        paletteView.currentBrush().width = width
-    }
-    
-    func colorWithTag(tag: NSInteger) -> UIColor? {
-        if tag == 4 {
-            return UIColor.clear
-        }
-        return nil
-    }
-}
-
+/*
 extension NXDrawTableViewController: PaletteViewControllerDelegate {
     func retrieveAlpha(alpha: CGFloat) {
-        self.paletteView.currentBrush().alpha = alpha
-        
+        print("retrieving alpha!")
+        self.paletteView.currentBrush().alpha = alpha        
     }
     
     func retrieveColor(color: UIColor) {
+        print("retrieving color: \(color)")
         self.paletteView.currentBrush().color = color
     }
     
@@ -263,6 +242,7 @@ extension NXDrawTableViewController: PaletteViewControllerDelegate {
         self.paletteView.currentBrush().width = width
     }
 }
+*/
 
 extension NXDrawTableViewController: WYPopoverControllerDelegate {
     
@@ -292,5 +272,3 @@ extension NXDrawTableViewController: IQAudioRecorderViewControllerDelegate {
         controller.dismiss(animated: true, completion: nil)
     }
 }
-
-

@@ -241,17 +241,18 @@ extension DemoDrawViewController: UIAlertViewDelegate
 
 extension DemoDrawViewController: PaletteDelegate
 {
-    //    func didChangeBrushColor(color: UIColor) {
-    //
-    //    }
-    //
-    //    func didChangeBrushAlpha(alpha: CGFloat) {
-    //
-    //    }
-    //
-    //    func didChangeBrushWidth(width: CGFloat) {
-    //
-    //    }
+        func didChangeBrushColor(color: UIColor) {
+            print("paletteView changed color: \(color)")
+            paletteView?.currentBrush().color = color            
+        }
+    
+        func didChangeBrushAlpha(alpha: CGFloat) {
+            paletteView?.currentBrush().alpha = alpha
+        }
+    
+        func didChangeBrushWidth(width: CGFloat) {
+            paletteView?.currentBrush().width = width
+        }
     
     
     // tag can be 1 ... 12
