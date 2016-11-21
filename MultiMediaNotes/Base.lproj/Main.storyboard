@@ -86,16 +86,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jLs-Pp-sZG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8M-DW-xA7">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem image="ic_add_a_photo" id="UuY-LA-GXD">
+                                        <connections>
+                                            <action selector="didTapCameraButton:" destination="dUN-xc-XyE" id="QKr-Ap-vj7"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="ic_mic_black" id="iMR-l2-IWw">
+                                        <connections>
+                                            <action selector="didTapAudioRecordBtn:" destination="dUN-xc-XyE" id="51B-J4-XcE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="H19-gr-yfT"/>
+                                    <barButtonItem image="ic_delete" id="1Cl-9z-QFZ">
+                                        <color key="tintColor" red="1" green="0.020543188050000001" blue="0.14217721420000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="jLs-Pp-sZG" secondAttribute="trailing" id="Ul1-Wy-CWk"/>
-                            <constraint firstItem="jLs-Pp-sZG" firstAttribute="top" secondItem="2Ve-Ea-39a" secondAttribute="bottom" id="a2O-6P-Qlp"/>
-                            <constraint firstItem="jLs-Pp-sZG" firstAttribute="leading" secondItem="lpu-3A-huv" secondAttribute="leading" id="gwe-si-kip"/>
-                            <constraint firstItem="Sa9-9S-xYJ" firstAttribute="top" secondItem="jLs-Pp-sZG" secondAttribute="bottom" id="kCI-Rq-934"/>
+                            <constraint firstItem="Sa9-9S-xYJ" firstAttribute="top" secondItem="u8M-DW-xA7" secondAttribute="bottom" id="15b-ml-Rds"/>
+                            <constraint firstItem="u8M-DW-xA7" firstAttribute="top" secondItem="jLs-Pp-sZG" secondAttribute="bottom" id="GfY-aq-M53"/>
+                            <constraint firstAttribute="trailing" secondItem="jLs-Pp-sZG" secondAttribute="trailing" id="GrG-V9-UX9"/>
+                            <constraint firstItem="u8M-DW-xA7" firstAttribute="leading" secondItem="lpu-3A-huv" secondAttribute="leading" id="Io9-e9-31C"/>
+                            <constraint firstAttribute="trailing" secondItem="u8M-DW-xA7" secondAttribute="trailing" id="aN6-eb-B16"/>
+                            <constraint firstItem="jLs-Pp-sZG" firstAttribute="leading" secondItem="lpu-3A-huv" secondAttribute="leading" id="hOh-mP-XUM"/>
+                            <constraint firstItem="jLs-Pp-sZG" firstAttribute="top" secondItem="2Ve-Ea-39a" secondAttribute="bottom" id="t3H-LA-aK7"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1Lz-gV-acS">
@@ -107,18 +129,9 @@
                                     <action selector="dismissView:" destination="dUN-xc-XyE" id="HKh-Vl-8w6"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="ic_delete" id="1Cl-9z-QFZ">
-                                <color key="tintColor" red="1" green="0.020543188050000001" blue="0.14217721420000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </barButtonItem>
                             <barButtonItem image="ic_blur_on" id="t4y-Ig-Tfv">
                                 <connections>
                                     <action selector="didTapEraserButton:" destination="dUN-xc-XyE" id="r2h-0b-vGK"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem image="ic_add_a_photo" id="ozi-fP-0dt"/>
-                            <barButtonItem image="ic_mic_black" id="iMR-l2-IWw">
-                                <connections>
-                                    <action selector="didTapAudioRecordBtn:" destination="dUN-xc-XyE" id="51B-J4-XcE"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="ic_brush" id="6a5-YR-pbQ">

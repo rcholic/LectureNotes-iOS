@@ -9,6 +9,8 @@
 import UIKit
 import WYPopoverController
 import IQAudioRecorderController
+import RSKImageCropper
+import ImagePicker
 
 class NXDrawTableViewController: UIViewController {
     
@@ -50,6 +52,14 @@ class NXDrawTableViewController: UIViewController {
         recorderVC.audioFormat = IQAudioFormat._m4a
         
         self.presentBlurredAudioRecorderViewControllerAnimated(recorderVC)
+    }
+    
+    
+    @IBAction func didTapCameraButton(_ sender: Any) {
+        let imagePickerVC = ImagePickerController()
+        imagePickerVC.imageLimit = 1
+        imagePickerVC.delegate = self
+        present(imagePickerVC, animated: true, completion: nil)
     }
     
     @IBAction func dismissView(_ sender: AnyObject) {
@@ -135,7 +145,7 @@ class NXDrawTableViewController: UIViewController {
         tableView.delegate = self
     }
     
-    private lazy var visibleCellPaths: [IndexPath] = {
+    lazy var visibleCellPaths: [IndexPath] = {
         let paths = self.tableView.indexPathsForVisibleRows ?? [IndexPath]()
 
         print("paths.count: \(paths.count)")
@@ -274,5 +284,26 @@ extension NXDrawTableViewController: IQAudioRecorderViewControllerDelegate {
     func audioRecorderController(_ controller: IQAudioRecorderViewController, didFinishWithAudioAtPath filePath: String) {
         print("finished recording, filePath: \(filePath)")
         controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension NXDrawTableViewController: ImagePickerDelegate {
+    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        print("wrapper did press, images.count: \(images.count)")
+    }
+    
+    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        imagePicker.dismiss(animated: true, completion: nil)
+        images.forEach {
+            if let currentCanvasIndex = visibleCellPaths.first?.row {
+                let currentCanvas = canvasViews[currentCanvasIndex]
+                currentCanvas.update($0) // update the canvas with the selected image
+            }
+        }
+    }
+    
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+        imagePicker.dismiss(animated: true, completion: nil)
+        print("photo selection canceled")
     }
 }

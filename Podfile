@@ -10,6 +10,8 @@ target 'MultiMediaNotes' do
     pod 'WYPopoverController', '~> 0.2.2'
     pod 'IQAudioRecorderController'
     pod 'RealmSwift'
+    pod 'ImagePicker'
+    pod 'RSKImageCropper'
 
   # Pods for MultiMediaNotes
 

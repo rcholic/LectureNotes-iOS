@@ -29,6 +29,8 @@
 		EB657A061DD013B40087039B /* IQAudioRecorderController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB657A051DD013B40087039B /* IQAudioRecorderController.framework */; };
 		EB68271B1DBD936B000E6541 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68271A1DBD936B000E6541 /* Note.swift */; };
 		EB868C0F1DD91E3400323B60 /* DemoDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB868C0E1DD91E3400323B60 /* DemoDrawViewController.swift */; };
+		EBA0D6511DE2927200F96389 /* ImagePicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA0D6501DE2927200F96389 /* ImagePicker.framework */; };
+		EBA0D6531DE2927800F96389 /* RSKImageCropper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBA0D6521DE2927800F96389 /* RSKImageCropper.framework */; };
 		EBCE8F171DE27A0800EF6047 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBCE8F161DE27A0800EF6047 /* Realm.framework */; };
 		EBCE8F191DE27A0D00EF6047 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBCE8F181DE27A0D00EF6047 /* RealmSwift.framework */; };
 		EBDF89531DBD71480022EDC5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF89521DBD71480022EDC5 /* SnapKit.framework */; };
@@ -96,6 +98,8 @@
 		EB657A051DD013B40087039B /* IQAudioRecorderController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQAudioRecorderController.framework; path = "Pods/../build/Debug-iphoneos/IQAudioRecorderController/IQAudioRecorderController.framework"; sourceTree = "<group>"; };
 		EB68271A1DBD936B000E6541 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		EB868C0E1DD91E3400323B60 /* DemoDrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoDrawViewController.swift; sourceTree = "<group>"; };
+		EBA0D6501DE2927200F96389 /* ImagePicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImagePicker.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/ImagePicker/ImagePicker.framework"; sourceTree = "<group>"; };
+		EBA0D6521DE2927800F96389 /* RSKImageCropper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RSKImageCropper.framework; path = "Pods/../build/Debug-iphoneos/RSKImageCropper/RSKImageCropper.framework"; sourceTree = "<group>"; };
 		EBCE8F161DE27A0800EF6047 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/Realm/Realm.framework"; sourceTree = "<group>"; };
 		EBCE8F181DE27A0D00EF6047 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		EBDF89521DBD71480022EDC5 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
@@ -126,6 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBA0D6531DE2927800F96389 /* RSKImageCropper.framework in Frameworks */,
+				EBA0D6511DE2927200F96389 /* ImagePicker.framework in Frameworks */,
 				EBCE8F191DE27A0D00EF6047 /* RealmSwift.framework in Frameworks */,
 				EBCE8F171DE27A0800EF6047 /* Realm.framework in Frameworks */,
 				EB657A061DD013B40087039B /* IQAudioRecorderController.framework in Frameworks */,
@@ -177,6 +183,8 @@
 		C28ADEDBE3EDEADC859C49A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EBA0D6521DE2927800F96389 /* RSKImageCropper.framework */,
+				EBA0D6501DE2927200F96389 /* ImagePicker.framework */,
 				EBCE8F181DE27A0D00EF6047 /* RealmSwift.framework */,
 				EBCE8F161DE27A0800EF6047 /* Realm.framework */,
 				EB657A051DD013B40087039B /* IQAudioRecorderController.framework */,
@@ -760,6 +768,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/WYPopoverController",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/IQAudioRecorderController",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/RSKImageCropper",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = MultiMediaNotes/Info.plist;
@@ -783,6 +792,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/WYPopoverController",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/IQAudioRecorderController",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/RSKImageCropper",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = MultiMediaNotes/Info.plist;
