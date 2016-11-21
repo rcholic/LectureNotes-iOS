@@ -294,16 +294,33 @@ extension NXDrawTableViewController: ImagePickerDelegate {
     
     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
         imagePicker.dismiss(animated: true, completion: nil)
-        images.forEach {
-            if let currentCanvasIndex = visibleCellPaths.first?.row {
-                let currentCanvas = canvasViews[currentCanvasIndex]
-                currentCanvas.update($0) // update the canvas with the selected image
-            }
+        
+        if let selectedPhoto = images.first {
+            let cropper = RSKImageCropViewController(image: selectedPhoto, cropMode: .square) // square cropper
+            cropper.delegate = self
+            self.present(cropper, animated: true, completion: nil)
         }
+        // TODO: merge photos as a grid ??
     }
     
     func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
         imagePicker.dismiss(animated: true, completion: nil)
         print("photo selection canceled")
+    }
+}
+
+extension NXDrawTableViewController: RSKImageCropViewControllerDelegate {
+    
+    func imageCropViewControllerDidCancelCrop(_ controller: RSKImageCropViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func imageCropViewController(_ controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect) {
+//        self.canvasView?.update(croppedImage)
+        if let currentCanvasIndex = visibleCellPaths.first?.row {
+            let currentCanvas = canvasViews[currentCanvasIndex]
+            currentCanvas.update(croppedImage) // update the canvas with the cropped image
+        }
+        controller.dismiss(animated: true, completion: nil)
     }
 }
