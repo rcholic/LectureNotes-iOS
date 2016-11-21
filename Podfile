@@ -9,6 +9,7 @@ target 'MultiMediaNotes' do
     pod 'SwiftDate', '~> 4.0'
     pod 'WYPopoverController', '~> 0.2.2'
     pod 'IQAudioRecorderController'
+    pod 'RealmSwift'
 
   # Pods for MultiMediaNotes
 
@@ -21,4 +22,12 @@ target 'MultiMediaNotes' do
     # Pods for testing
   end
 
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '3.0' # or '3.0'
+    end
+  end
 end

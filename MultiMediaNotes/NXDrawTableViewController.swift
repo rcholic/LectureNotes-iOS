@@ -11,7 +11,6 @@ import WYPopoverController
 import IQAudioRecorderController
 
 class NXDrawTableViewController: UIViewController {
-
     
     @IBOutlet weak var audioRecorder: UIBarButtonItem!
     @IBOutlet weak var brushButton: UIBarButtonItem!
@@ -55,6 +54,11 @@ class NXDrawTableViewController: UIViewController {
     
     @IBAction func dismissView(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func didTapEraserButton(_ sender: Any) {
+        paletteView.currentBrush().color = UIColor.clear
+        paletteView.currentBrush().width = 10
     }
     
     @IBAction func didTapPaletteButton(_ sender: AnyObject) {
@@ -108,7 +112,7 @@ class NXDrawTableViewController: UIViewController {
         canvasView.layer.borderWidth = 2.0
         canvasView.layer.cornerRadius = 5.0
         canvasView.clipsToBounds = true
-//        canvasView.delegate = self
+        canvasView.delegate = self // delegate here?
         
         return canvasView
     }

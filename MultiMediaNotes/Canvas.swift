@@ -17,14 +17,14 @@ import UIKit
 }
 
 @objc public protocol ExtendedCanvasDelegate: CanvasDelegate {
-    @objc optional func viewDrawStartedDrawing()
-    @objc optional func viewDrawEndedDrawing()
+    func viewDrawStartedDrawing()
+    func viewDrawEndedDrawing()
 }
 
 
 open class Canvas: UIView, UITableViewDelegate
 {
-    open weak var delegate: CanvasDelegate?
+    open weak var delegate: ExtendedCanvasDelegate?
     
     fileprivate var canvasId: String?
     
@@ -123,6 +123,8 @@ open class Canvas: UIView, UITableViewDelegate
     // MARK: - Override Methods
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("touches began!")
+        self.delegate?.viewDrawStartedDrawing() // testing this
+        
         self.saved = false
         self.pointMoved = false
         self.pointIndex = 0
@@ -168,6 +170,9 @@ open class Canvas: UIView, UITableViewDelegate
     }
     
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touches ended")
+        self.delegate?.viewDrawEndedDrawing()
+        
         if !self.pointMoved {   // touchesBegan -> touchesEnded : just touched
             self.path.move(to: self.points[0]!)
             self.path.addLine(to: self.points[0]!)

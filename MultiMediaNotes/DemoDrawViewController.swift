@@ -166,7 +166,15 @@ class DemoDrawViewController: UIViewController {
     }
 }
 
-extension DemoDrawViewController: CanvasDelegate {
+extension DemoDrawViewController: ExtendedCanvasDelegate {
+    public func viewDrawStartedDrawing() {
+        print("started drawing in demo")
+    }
+    
+    func viewDrawEndedDrawing() {
+        print("ended drawing in demo")
+    }
+
     func brush() -> Brush? {
         print("in demo, canvas delegate called")
         return self.paletteView?.currentBrush()

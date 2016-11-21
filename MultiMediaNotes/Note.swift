@@ -8,14 +8,23 @@
 
 import Foundation
 import CoreData
+import RealmSwift
 
-@objc class Note: NSManagedObject {
-    @NSManaged var updatedAt: NSDate
-    @NSManaged var createdAt: NSDate
-    @NSManaged var remindDate: NSDate?
-    @NSManaged var subject: String
-    //    @NSManaged var drawImages: [DrawViewImage]
-    //    @NSManaged var drawing: DrawView
-    @NSManaged var drawnImages: [NSData] // NSMutableArray
-    
+//@objc class Note: NSManagedObject {
+//    @NSManaged var updatedAt: NSDate
+//    @NSManaged var createdAt: NSDate
+//    @NSManaged var remindDate: NSDate?
+//    @NSManaged var subject: String
+//    //    @NSManaged var drawImages: [DrawViewImage]
+//    //    @NSManaged var drawing: DrawView
+//    @NSManaged var drawnImages: [NSData] // NSMutableArray
+//    
+//}
+
+class Note: Object {
+    dynamic var updatedAt: NSDate = NSDate()
+    dynamic var createdAt: NSDate = NSDate()
+    dynamic var subject: String? = nil
+    var drawnImages: [UIImage] = []
+    dynamic var imageData: [NSData] = []
 }

@@ -29,6 +29,8 @@
 		EB657A061DD013B40087039B /* IQAudioRecorderController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB657A051DD013B40087039B /* IQAudioRecorderController.framework */; };
 		EB68271B1DBD936B000E6541 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB68271A1DBD936B000E6541 /* Note.swift */; };
 		EB868C0F1DD91E3400323B60 /* DemoDrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB868C0E1DD91E3400323B60 /* DemoDrawViewController.swift */; };
+		EBCE8F171DE27A0800EF6047 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBCE8F161DE27A0800EF6047 /* Realm.framework */; };
+		EBCE8F191DE27A0D00EF6047 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBCE8F181DE27A0D00EF6047 /* RealmSwift.framework */; };
 		EBDF89531DBD71480022EDC5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF89521DBD71480022EDC5 /* SnapKit.framework */; };
 		EBDF89551DBD714D0022EDC5 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBDF89541DBD714D0022EDC5 /* SwiftDate.framework */; };
 		EBDF89571DBD83200022EDC5 /* NotesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDF89561DBD83200022EDC5 /* NotesListViewController.swift */; };
@@ -94,6 +96,8 @@
 		EB657A051DD013B40087039B /* IQAudioRecorderController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IQAudioRecorderController.framework; path = "Pods/../build/Debug-iphoneos/IQAudioRecorderController/IQAudioRecorderController.framework"; sourceTree = "<group>"; };
 		EB68271A1DBD936B000E6541 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		EB868C0E1DD91E3400323B60 /* DemoDrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoDrawViewController.swift; sourceTree = "<group>"; };
+		EBCE8F161DE27A0800EF6047 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/Realm/Realm.framework"; sourceTree = "<group>"; };
+		EBCE8F181DE27A0D00EF6047 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/RealmSwift/RealmSwift.framework"; sourceTree = "<group>"; };
 		EBDF89521DBD71480022EDC5 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/SnapKit/SnapKit.framework"; sourceTree = "<group>"; };
 		EBDF89541DBD714D0022EDC5 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/SwiftDate/SwiftDate.framework"; sourceTree = "<group>"; };
 		EBDF89561DBD83200022EDC5 /* NotesListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesListViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBCE8F191DE27A0D00EF6047 /* RealmSwift.framework in Frameworks */,
+				EBCE8F171DE27A0800EF6047 /* Realm.framework in Frameworks */,
 				EB657A061DD013B40087039B /* IQAudioRecorderController.framework in Frameworks */,
 				EB5F8AF01DC6C21B00983E01 /* WYPopoverController.framework in Frameworks */,
 				EBDF89551DBD714D0022EDC5 /* SwiftDate.framework in Frameworks */,
@@ -171,6 +177,8 @@
 		C28ADEDBE3EDEADC859C49A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EBCE8F181DE27A0D00EF6047 /* RealmSwift.framework */,
+				EBCE8F161DE27A0800EF6047 /* Realm.framework */,
 				EB657A051DD013B40087039B /* IQAudioRecorderController.framework */,
 				EB5F8AEF1DC6C21B00983E01 /* WYPopoverController.framework */,
 				EBDF89541DBD714D0022EDC5 /* SwiftDate.framework */,
