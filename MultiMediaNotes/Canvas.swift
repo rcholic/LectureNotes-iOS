@@ -43,6 +43,10 @@ open class Canvas: UIView, UITableViewDelegate
     fileprivate var pointIndex = 0
     fileprivate var points = [CGPoint?](repeating: CGPoint.zero, count: 5)
     
+    public lazy var image: UIImage = {
+        return self.mergePathsAndImages()
+    }()
+    
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }

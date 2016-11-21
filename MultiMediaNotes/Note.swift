@@ -26,5 +26,10 @@ class Note: Object {
     dynamic var createdAt: NSDate = NSDate()
     dynamic var subject: String? = nil
     var drawnImages: [UIImage] = []
-    dynamic var imageData: [NSData] = []
+    dynamic var imageData: [Data] = []
+//    dynamic var imageData = List<NSData>() // checkout: https://realm.io/docs/swift/latest/#to-many-relationships
+    
+    override static func ignoredProperties() -> [String] {
+        return ["drawnImages"]
+    }
 }

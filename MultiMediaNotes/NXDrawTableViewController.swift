@@ -12,6 +12,9 @@ import IQAudioRecorderController
 import RSKImageCropper
 import ImagePicker
 
+//import Realm
+import RealmSwift
+
 class NXDrawTableViewController: UIViewController {
     
     @IBOutlet weak var audioRecorder: UIBarButtonItem!
@@ -24,6 +27,7 @@ class NXDrawTableViewController: UIViewController {
     var curNote: Note? = nil
     var paletteView: Palette = Palette()
     var canvasViews: [Canvas] = []
+    var canvasImages: [UIImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +40,8 @@ class NXDrawTableViewController: UIViewController {
     }
     
     @IBAction func didTapAddPageButton(_ sender: AnyObject) {
-        canvasViews.append(generateCanvas())
+        let aCanvas = generateCanvas()
+        canvasViews.append(aCanvas)
         tableView.reloadData()
         let indexPath = IndexPath(row: canvasViews.count-1, section: 0)
         tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
@@ -54,6 +59,26 @@ class NXDrawTableViewController: UIViewController {
         self.presentBlurredAudioRecorderViewControllerAnimated(recorderVC)
     }
     
+    
+    @IBAction func didTapSaveButton(_ sender: Any) {
+        
+        canvasImages = canvasViews.map {
+            $0.save()
+            return $0.image
+        } // TODO: convert the images to NSData
+        let imageDataArr: [Data] = canvasImages.map {
+            return $0.asPNGData()!
+        }
+        print("imageDataArr. count: \(imageDataArr.count)")
+        let note = Note()
+        note.subject = "Note created at \(note.createdAt.description)"
+        note.imageData = imageDataArr
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(note)
+        }
+    }
     
     @IBAction func didTapCameraButton(_ sender: Any) {
         let imagePickerVC = ImagePickerController()

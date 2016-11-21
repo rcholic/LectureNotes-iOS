@@ -141,7 +141,11 @@
                             </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" systemItem="save" id="aAK-N9-NNp"/>
+                            <barButtonItem style="plain" systemItem="save" id="aAK-N9-NNp">
+                                <connections>
+                                    <action selector="didTapSaveButton:" destination="dUN-xc-XyE" id="xXR-Sv-Y8g"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="add" id="gqN-2G-UW9">
                                 <connections>
                                     <action selector="didTapAddPageButton:" destination="dUN-xc-XyE" id="aFn-Qz-Xho"/>
