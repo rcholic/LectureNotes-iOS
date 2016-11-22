@@ -1,19 +1,64 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="NoteListTableViewCellWithImage" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCellWithImage" rowHeight="141" id="KGk-i7-Jjw" customClass="NoteListTableViewCellWithImage" customModule="MultiMediaNotes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="517" height="141"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <frame key="frameInset" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="517" height="141"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="scissor.png" translatesAutoresizingMaskIntoConstraints="NO" id="scA-7o-DjK">
+                        <rect key="frame" x="437" y="34" width="72" height="72"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="72" id="E1o-SV-sdP"/>
+                            <constraint firstAttribute="height" constant="72" id="w3M-gc-0nq"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="updatedAt" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GxU-v9-cHp">
+                        <rect key="frame" x="346" y="8" width="163" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmd-23-Kom">
+                        <rect key="frame" x="8" y="60" width="421" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="scA-7o-DjK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="111-wz-Fi5"/>
+                    <constraint firstItem="scA-7o-DjK" firstAttribute="top" secondItem="GxU-v9-cHp" secondAttribute="bottom" constant="5" id="2Yk-hq-uFX"/>
+                    <constraint firstItem="scA-7o-DjK" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" constant="8" id="4pf-Za-9kV"/>
+                    <constraint firstItem="GxU-v9-cHp" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="Bkx-uk-5qm"/>
+                    <constraint firstItem="scA-7o-DjK" firstAttribute="leading" secondItem="tmd-23-Kom" secondAttribute="trailing" constant="8" id="QR9-ds-0eX"/>
+                    <constraint firstItem="tmd-23-Kom" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="Xkk-W6-0tA"/>
+                    <constraint firstItem="GxU-v9-cHp" firstAttribute="trailing" secondItem="scA-7o-DjK" secondAttribute="trailing" id="jjn-Kb-n9m"/>
+                    <constraint firstItem="tmd-23-Kom" firstAttribute="centerY" secondItem="scA-7o-DjK" secondAttribute="centerY" id="kTd-dY-NN7"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="dateUpdated" destination="GxU-v9-cHp" id="syE-lV-nWC"/>
+                <outlet property="firstImage" destination="scA-7o-DjK" id="5Aq-lS-vSB"/>
+                <outlet property="title" destination="tmd-23-Kom" id="o8W-8L-SZj"/>
+            </connections>
+            <point key="canvasLocation" x="98.5" y="75.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="scissor.png" width="25" height="25"/>
+    </resources>
 </document>

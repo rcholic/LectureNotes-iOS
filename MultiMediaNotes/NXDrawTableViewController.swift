@@ -62,17 +62,22 @@ class NXDrawTableViewController: UIViewController {
     
     @IBAction func didTapSaveButton(_ sender: Any) {
         
+        // save images for each canvas
         canvasImages = canvasViews.map {
             $0.save()
-            return $0.image
-        } // TODO: convert the images to NSData
-        let imageDataArr: [Data] = canvasImages.map {
-            return $0.asPNGData()!
+            return $0.image.asPNGImage()! //.asJPGImage(0.8)!
         }
-        print("imageDataArr. count: \(imageDataArr.count)")
+        
+        // create a new note
         let note = Note()
         note.subject = "Note created at \(note.createdAt.description)"
-        note.imageData = imageDataArr
+        
+        canvasImages.forEach {
+            let noteImage = NoteImage()
+            noteImage.image = $0
+            noteImage.imageData = $0.asPNGData()! //.asJPEGData(0.8)!
+            note.noteImages.append(noteImage)
+        }
         
         let realm = try! Realm()
         try! realm.write {

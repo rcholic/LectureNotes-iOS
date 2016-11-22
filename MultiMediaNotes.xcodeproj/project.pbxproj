@@ -12,6 +12,7 @@
 		4502123F9A1A5346FE099516 /* Pods_MultiMediaNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96F42B4A627757C5BD3E5518 /* Pods_MultiMediaNotes.framework */; };
 		8963DC3DABC6AF6DE95D9A67 /* Pods_MultiMediaNotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB547D36C32DCF7AFFDBC3BF /* Pods_MultiMediaNotesUITests.framework */; };
 		A4BD377ABA9363992049925E /* Pods_MultiMediaNotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E417D5C6BBA9B358B469C216 /* Pods_MultiMediaNotesTests.framework */; };
+		EB2A17531DE3C58B00732FE4 /* NoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2A17521DE3C58B00732FE4 /* NoteImage.swift */; };
 		EB5F8AD51DC6A90C00983E01 /* UIImageExtractExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AD41DC6A90C00983E01 /* UIImageExtractExt.swift */; };
 		EB5F8AD71DC6A92D00983E01 /* UIViewFrameExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AD61DC6A92D00983E01 /* UIViewFrameExt.swift */; };
 		EB5F8AD91DC6A9A000983E01 /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AD81DC6A9A000983E01 /* ToolBar.swift */; };
@@ -81,6 +82,7 @@
 		D2526CFC9B9CE66472DC0769 /* Pods-MultiMediaNotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiMediaNotesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MultiMediaNotesUITests/Pods-MultiMediaNotesUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D758C9552E161E0A3BD4CBE2 /* Pods-MultiMediaNotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiMediaNotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MultiMediaNotes/Pods-MultiMediaNotes.debug.xcconfig"; sourceTree = "<group>"; };
 		E417D5C6BBA9B358B469C216 /* Pods_MultiMediaNotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiMediaNotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB2A17521DE3C58B00732FE4 /* NoteImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteImage.swift; sourceTree = "<group>"; };
 		EB5F8AD41DC6A90C00983E01 /* UIImageExtractExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtractExt.swift; sourceTree = "<group>"; };
 		EB5F8AD61DC6A92D00983E01 /* UIViewFrameExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewFrameExt.swift; sourceTree = "<group>"; };
 		EB5F8AD81DC6A9A000983E01 /* ToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				EB68271A1DBD936B000E6541 /* Note.swift */,
+				EB2A17521DE3C58B00732FE4 /* NoteImage.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -599,6 +602,7 @@
 				EBDF89571DBD83200022EDC5 /* NotesListViewController.swift in Sources */,
 				EB5F8AE11DC6AA0500983E01 /* CircleButton.swift in Sources */,
 				EBFF5DD51DB436AC00DB7154 /* AppDelegate.swift in Sources */,
+				EB2A17531DE3C58B00732FE4 /* NoteImage.swift in Sources */,
 				EB5F8AE31DC6AA1B00983E01 /* Canvas.swift in Sources */,
 				EBDF895D1DBD86E60022EDC5 /* NoteListTableViewCellNoImage.swift in Sources */,
 				EB5F8AEC1DC6AE9800983E01 /* NXDrawTableViewController.swift in Sources */,

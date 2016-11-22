@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class NotesListViewController: UIViewController {
 
-    var notes: [String] = [] // TODO: list of Note models, retrieved from database
+    var notes: [Note] = [] // TODO: list of Note models, retrieved from database
     @IBOutlet weak var tableView: UITableView!
     
     let cellIdNoImage = "NoteCellNoImage"
@@ -20,17 +21,22 @@ class NotesListViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         
-        for i in 1..<10 {
-            notes.append("Note Title \(i)")
-        }
+//        for i in 1..<10 {
+//            notes.append("Note Title \(i)")
+//        }
         
         setupTableView()
+        loadNotes()
     }
     
     func setupTableView() {
+        automaticallyAdjustsScrollViewInsets = false
         tableView.register(UINib(nibName: "NoteListTableViewCellNoImage", bundle: nil), forCellReuseIdentifier: cellIdNoImage)
+        tableView.register(UINib(nibName: "NoteListTableViewCellWithImage", bundle: nil), forCellReuseIdentifier: cellIdWithImage)
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.contentSize = CGSize(width: tableView.frame.size.width, height: tableView.frame.size.height)
+//        tableView.contentSize = CGSize(width: tableView.frame.size.width, height: tableView.frame.size.height)
+        tableView.tableFooterView = UIView() // remove separator in empty cells
+        tableView.estimatedRowHeight = 185.0
         tableView.dataSource = self
         tableView.delegate = self
         tableView.reloadData()
@@ -47,6 +53,19 @@ class NotesListViewController: UIViewController {
         let fontAttr = UIFont(name: "HelveticaNeue-CondensedBlack", size: 25)
         self.navigationController?.navigationBar.titleTextAttributes = NSDictionary(objects: [UIColor.white, textShadow, fontAttr!], forKeys: [NSForegroundColorAttributeName as NSCopying, NSShadowAttributeName as NSCopying, NSFontAttributeName as NSCopying]) as? [String : AnyObject]
     }
+    
+    func loadNotes() {
+        let realm = try! Realm()
+        notes = Array(realm.objects(Note.self)) // cast Results<Note> to [Note] array
+        self.tableView.reloadData()
+        
+        
+//        let savedNotes = realm.objects(Note.self)
+//        savedNotes.forEach {
+//            print("note subject: \($0.subject ?? "No subject")")
+//            
+//        }
+    }
 }
 
 extension NotesListViewController: UITableViewDataSource {
@@ -60,10 +79,19 @@ extension NotesListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdNoImage, for: indexPath) as! NoteListTableViewCellNoImage
-        
-        cell.title.text = notes[indexPath.row]
-        cell.dateUpdated.text = "10/22/2016"
+        // TODO: create an interface for both Cell type: No Image and with image
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdWithImage, for: indexPath) as! NoteListTableViewCellWithImage
+        let curNote = notes[indexPath.row]
+//        cell.title.text = curNote.subject
+//        cell.dateUpdated.text = "\(curNote.updatedAt)"
+//        print("number of images: \(curNote.noteImages.count)")
+//        curNote.noteImages.forEach {
+//            print("desc: \($0.imageData.description)")
+//        }
+//        if let first = curNote.noteImages.first {
+//            cell.firstImage.image = UIImage(data: first.imageData)
+//        }
+        cell.bind(note: curNote)
         
         return cell
     }

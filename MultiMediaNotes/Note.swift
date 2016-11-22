@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import CoreData
+//import CoreData
 import RealmSwift
 
 //@objc class Note: NSManagedObject {
@@ -26,7 +26,7 @@ class Note: Object {
     dynamic var createdAt: NSDate = NSDate()
     dynamic var subject: String? = nil
     var drawnImages: [UIImage] = []
-    dynamic var imageData: [Data] = []
+    let noteImages = List<NoteImage>()
 //    dynamic var imageData = List<NSData>() // checkout: https://realm.io/docs/swift/latest/#to-many-relationships
     
     override static func ignoredProperties() -> [String] {
