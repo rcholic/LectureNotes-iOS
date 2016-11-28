@@ -12,6 +12,7 @@ import RealmSwift
 class NotesListViewController: UIViewController {
 
     var notes: [Note] = [] // TODO: list of Note models, retrieved from database
+    var selectedNote: Note? = nil
     @IBOutlet weak var tableView: UITableView!
     
     let cellIdNoImage = "NoteCellNoImage"
@@ -54,17 +55,20 @@ class NotesListViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes = NSDictionary(objects: [UIColor.white, textShadow, fontAttr!], forKeys: [NSForegroundColorAttributeName as NSCopying, NSShadowAttributeName as NSCopying, NSFontAttributeName as NSCopying]) as? [String : AnyObject]
     }
     
+    @IBAction func didTapAddNoteButton(_ sender: Any) {
+        
+        let targetVC = self.storyboard?.instantiateViewController(withIdentifier: "NoteDetailBoard") as! NXDrawTableViewController
+        
+        targetVC.curNote = nil
+        self.navigationController?.pushViewController(targetVC, animated: true) // TODO: remove the code redundancy
+        
+    }
+    
     func loadNotes() {
         let realm = try! Realm()
         notes = Array(realm.objects(Note.self)) // cast Results<Note> to [Note] array
         self.tableView.reloadData()
-        
-        
-//        let savedNotes = realm.objects(Note.self)
-//        savedNotes.forEach {
-//            print("note subject: \($0.subject ?? "No subject")")
-//            
-//        }
+
     }
 }
 
@@ -96,14 +100,32 @@ extension NotesListViewController: UITableViewDataSource {
         return cell
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "NoteDetailViewSegue" {
+            print("preparing segue NoteDetailViewSegue")
+//            segue.destination.performSelector(inBackground: #selector(self.getNote), with: selectedNote)
+        }
+    }
 }
 
 extension NotesListViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedNote = notes[indexPath.row]
+        selectedNote = notes[indexPath.row]
         print("selected note: \(selectedNote)")
         // TODO: perform segue
+        let targetVC = self.storyboard?.instantiateViewController(withIdentifier: "NoteDetailBoard") as! NXDrawTableViewController
+        targetVC.curNote = selectedNote
+        
+        self.navigationController?.pushViewController(targetVC, animated: true)
+        
+//        performSegue(withIdentifier: "NoteDetailViewSegue", sender: nil)
+//        present(targetVC, animated: true, completion: nil)
+        
+//                self.navigationController?.present(targetVC, animated: true, completion: nil)
+//        self.navigationController?.pushViewController(targetVC, animated: true)
+        
+        selectedNote = nil
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

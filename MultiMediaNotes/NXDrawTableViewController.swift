@@ -32,6 +32,7 @@ class NXDrawTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        loadNote()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -93,7 +94,7 @@ class NXDrawTableViewController: UIViewController {
     }
     
     @IBAction func dismissView(_ sender: AnyObject) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func didTapEraserButton(_ sender: Any) {
@@ -144,6 +145,27 @@ class NXDrawTableViewController: UIViewController {
 //        self.view.addSubview(paletteView)
         
         // TODO: load notes
+    }
+    
+    private func loadNote() {
+        guard let note = curNote else { return }
+        
+        var count: Int = 0
+        canvasViews = note.noteImages.map {
+            let canvasView = Canvas(canvasId: count.description, backgroundImage: $0.image)
+            
+//            canvasView.mainImageView.image = $0.image
+            
+            canvasView.layer.borderColor = UIColor(red: 0.22, green: 0.22, blue: 0.22, alpha: 0.8).cgColor
+            canvasView.layer.borderWidth = 2.0
+            canvasView.layer.cornerRadius = 5.0
+            canvasView.clipsToBounds = true
+            canvasView.delegate = self // delegate here?
+            
+            count += 1
+            return canvasView
+        }
+        self.tableView.reloadData()
     }
     
     private func generateCanvas() -> Canvas {

@@ -61,7 +61,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="90I-od-81J">
                             <connections>
-                                <segue destination="j8c-6M-zNj" kind="show" id="fRA-zh-UmU"/>
+                                <action selector="didTapAddNoteButton:" destination="BYZ-38-t0r" id="7nb-x5-Chv"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -71,12 +71,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="832.79999999999995" y="-8.5457271364317844"/>
+            <point key="canvasLocation" x="874" y="-8"/>
         </scene>
         <!--Draw Table View Controller-->
         <scene sceneID="BLr-zu-naA">
             <objects>
-                <viewController id="dUN-xc-XyE" customClass="NXDrawTableViewController" customModule="MultiMediaNotes" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoteDetailBoard" id="dUN-xc-XyE" customClass="NXDrawTableViewController" customModule="MultiMediaNotes" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Ve-Ea-39a"/>
                         <viewControllerLayoutGuide type="bottom" id="Sa9-9S-xYJ"/>
