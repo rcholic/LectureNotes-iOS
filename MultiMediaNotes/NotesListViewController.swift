@@ -14,6 +14,7 @@ class NotesListViewController: UIViewController {
     var notes: [Note] = [] // TODO: list of Note models, retrieved from database
     var selectedNote: Note? = nil
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     let cellIdNoImage = "NoteCellNoImage"
     let cellIdWithImage = "NoteCellWithImage"
@@ -64,11 +65,33 @@ class NotesListViewController: UIViewController {
         
     }
     
+    @IBAction func didTapEditButton(_ sender: Any) {
+
+        if (self.tableView.isEditing) {
+            self.tableView.setEditing(false, animated: true)
+            self.editButton.title = "Edit"
+        } else {
+            self.tableView.setEditing(true, animated: true)
+            self.editButton.title = "Done"
+        }
+    }
+    
+    override func setEditing(_ editing: Bool, animated: Bool) {
+        super.setEditing(true, animated: true)
+    }
+    
     func loadNotes() {
         let realm = try! Realm()
         notes = Array(realm.objects(Note.self)) // cast Results<Note> to [Note] array
         self.tableView.reloadData()
-
+    }
+    
+    func deleteNoteAtIndex(index: Int) {
+        guard index >= 0 && index < notes.count else { return }
+        
+        let realm = try! Realm()
+        realm.delete(notes[index])
+        self.tableView.reloadData()
     }
 }
 
@@ -100,11 +123,31 @@ extension NotesListViewController: UITableViewDataSource {
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "NoteDetailViewSegue" {
-            print("preparing segue NoteDetailViewSegue")
-//            segue.destination.performSelector(inBackground: #selector(self.getNote), with: selectedNote)
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            print("deleting the cell index: \(indexPath.row)")
+            // Delete the row from the data source
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            print("insert into row: \(indexPath.row)")
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete", handler: { (action, indexPath) in
+            
+            self.notes.remove(at: indexPath.row)
+            // TODO: pop up delete confirmation and delete from realm
+            self.deleteNoteAtIndex(index: indexPath.row)
+            self.tableView.reloadData() // reload Rows at indexPath??
+        })
+        
+        return [delete]
     }
 }
 
