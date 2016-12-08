@@ -107,10 +107,7 @@ class NotesListViewController: UIViewController {
         
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
         
-        
-        
         self.present(alert, animated: true, completion: nil)
-        
     }
 }
 
@@ -176,14 +173,7 @@ extension NotesListViewController: UITableViewDelegate {
         // TODO: perform segue
         let targetVC = self.storyboard?.instantiateViewController(withIdentifier: "NoteDetailBoard") as! NXDrawTableViewController
         targetVC.curNote = selectedNote
-        
         self.navigationController?.pushViewController(targetVC, animated: true)
-        
-//        performSegue(withIdentifier: "NoteDetailViewSegue", sender: nil)
-//        present(targetVC, animated: true, completion: nil)
-        
-//                self.navigationController?.present(targetVC, animated: true, completion: nil)
-//        self.navigationController?.pushViewController(targetVC, animated: true)
         
         selectedNote = nil
         tableView.deselectRow(at: indexPath, animated: true)

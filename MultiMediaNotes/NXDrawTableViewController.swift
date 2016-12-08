@@ -155,16 +155,21 @@ class NXDrawTableViewController: UIViewController {
             let canvasView = Canvas(canvasId: count.description, backgroundImage: $0.image)
             
 //            canvasView.mainImageView.image = $0.image
+            canvasView.image = $0.image
             
             canvasView.layer.borderColor = UIColor(red: 0.22, green: 0.22, blue: 0.22, alpha: 0.8).cgColor
             canvasView.layer.borderWidth = 2.0
             canvasView.layer.cornerRadius = 5.0
             canvasView.clipsToBounds = true
             canvasView.delegate = self // delegate here?
+            canvasView.updateCanvasWithBg() // not working right! - does not load image
+//            canvasView.update($0.image) // update ???
+//            canvasView.updateByLastSession()
             
             count += 1
             return canvasView
         }
+        
         self.tableView.reloadData()
     }
     
@@ -248,6 +253,7 @@ extension NXDrawTableViewController: ExtendedCanvasDelegate {
     
     func canvas(_ canvas: Canvas, didUpdateDrawing drawing: Drawing, mergedImage image: UIImage?) {
 //        self.updateToolbar(canvas) // TODO:
+        print("did update drawing delegate called!, image size: \(image?.size), drawing: \(drawing.background?.size)")
     }
     
     func canvas(_ canvas: Canvas, didSaveDrawing drawing: Drawing, mergedImage image: UIImage?) {

@@ -110,6 +110,13 @@ open class Canvas: UIView, UITableViewDelegate
         self.delegate?.canvas?(self, didUpdateDrawing: currentDrawing, mergedImage: mergedImage)
     }
     
+    // custom added
+    open func updateCanvasWithBg() {
+        let currentDrawing = self.currentDrawing()
+        let lastSession = self.session.lastSession()
+        self.delegate?.canvas?(self, didUpdateDrawing: currentDrawing, mergedImage: lastSession?.background)
+    }
+    
     fileprivate func didSaveCanvas() {
         let mergedImage = self.mergePathsAndImages()
         self.delegate?.canvas?(self, didSaveDrawing: self.drawing, mergedImage: mergedImage)
@@ -174,7 +181,6 @@ open class Canvas: UIView, UITableViewDelegate
     }
     
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("touches ended")
         self.delegate?.viewDrawEndedDrawing()
         
         if !self.pointMoved {   // touchesBegan -> touchesEnded : just touched
