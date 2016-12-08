@@ -53,7 +53,7 @@ class NotesListViewController: UIViewController {
         textShadow.shadowColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.8)
         textShadow.shadowOffset = CGSize(width: 0, height: 1)
         let fontAttr = UIFont(name: "HelveticaNeue-CondensedBlack", size: 25)
-        self.navigationController?.navigationBar.titleTextAttributes = NSDictionary(objects: [UIColor.white, textShadow, fontAttr!], forKeys: [NSForegroundColorAttributeName as NSCopying, NSShadowAttributeName as NSCopying, NSFontAttributeName as NSCopying]) as? [String : AnyObject]
+        self.navigationController?.navigationBar.titleTextAttributes = NSDictionary(objects: [UIColor.white, textShadow, fontAttr!], forKeys: [NSForegroundColorAttributeName as NSCopying, NSShadowAttributeName as NSCopying, NSFontAttributeName as NSCopying]) as? [String : AnyObject]        
     }
     
     @IBAction func didTapAddNoteButton(_ sender: Any) {
@@ -68,16 +68,19 @@ class NotesListViewController: UIViewController {
     @IBAction func didTapEditButton(_ sender: Any) {
 
         if (self.tableView.isEditing) {
-            self.tableView.setEditing(false, animated: true)
+            self.setEditing(false, animated: true)
             self.editButton.title = "Edit"
+            self.editButton.style = .plain
         } else {
-            self.tableView.setEditing(true, animated: true)
+            self.setEditing(true, animated: true)
             self.editButton.title = "Done"
+            self.editButton.style = .done
         }
     }
     
     override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(true, animated: true)
+        super.setEditing(editing, animated: animated)
+        self.tableView.setEditing(editing, animated: animated)
     }
     
     func loadNotes() {
@@ -86,12 +89,28 @@ class NotesListViewController: UIViewController {
         self.tableView.reloadData()
     }
     
-    func deleteNoteAtIndex(index: Int) {
+    func confirmDeleteNote(index: Int) {
+        
         guard index >= 0 && index < notes.count else { return }
         
-        let realm = try! Realm()
-        realm.delete(notes[index])
-        self.tableView.reloadData()
+        
+        let alert = UIAlertController(title: "Confirmation", message: "The deletion of the selected note is NOT reversible", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Delete", style: UIAlertActionStyle.destructive, handler: { _ in
+            print("deleting note at index number: \(index)")
+            let realm = try! Realm()
+            realm.beginWrite()
+            realm.delete(self.notes[index])
+            try! realm.commitWrite()
+            self.notes.remove(at: index)
+            self.tableView.reloadData()
+        }))
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        
+        
+        self.present(alert, animated: true, completion: nil)
+        
     }
 }
 
@@ -142,9 +161,7 @@ extension NotesListViewController: UITableViewDataSource {
         let delete = UITableViewRowAction(style: .destructive, title: "Delete", handler: { (action, indexPath) in
             
             self.notes.remove(at: indexPath.row)
-            // TODO: pop up delete confirmation and delete from realm
-            self.deleteNoteAtIndex(index: indexPath.row)
-            self.tableView.reloadData() // reload Rows at indexPath??
+            self.confirmDeleteNote(index: indexPath.row)
         })
         
         return [delete]
