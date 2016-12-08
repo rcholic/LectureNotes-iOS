@@ -69,9 +69,16 @@ class NXDrawTableViewController: UIViewController {
             return $0.image.asPNGImage()! //.asJPGImage(0.8)!
         }
         
+        var note: Note
+        if curNote == nil {
+            note = Note()
+            note.subject = "Note created at \(note.createdAt.description)"
+        } else {
+            note = curNote!
+        }
+        
         // create a new note
-        let note = Note()
-        note.subject = "Note created at \(note.createdAt.description)"
+//        let note = Note()
         
         canvasImages.forEach {
             let noteImage = NoteImage()
@@ -81,8 +88,12 @@ class NXDrawTableViewController: UIViewController {
         }
         
         let realm = try! Realm()
+        
+        let isUpdate = curNote != nil
+        
         try! realm.write {
-            realm.add(note)
+//            realm.add(note)
+            realm.add(note, update: isUpdate)
         }
     }
     
