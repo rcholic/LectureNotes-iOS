@@ -152,19 +152,13 @@ class NXDrawTableViewController: UIViewController {
         
         var count: Int = 0
         canvasViews = note.noteImages.map {
-            let canvasView = Canvas(canvasId: count.description, backgroundImage: $0.image)
-            
-//            canvasView.mainImageView.image = $0.image
-            canvasView.image = $0.image
+            let canvasView = Canvas(canvasId: count.description, backgroundImage: UIImage(data: $0.imageData))
             
             canvasView.layer.borderColor = UIColor(red: 0.22, green: 0.22, blue: 0.22, alpha: 0.8).cgColor
             canvasView.layer.borderWidth = 2.0
             canvasView.layer.cornerRadius = 5.0
             canvasView.clipsToBounds = true
             canvasView.delegate = self // delegate here?
-            canvasView.updateCanvasWithBg() // not working right! - does not load image
-//            canvasView.update($0.image) // update ???
-//            canvasView.updateByLastSession()
             
             count += 1
             return canvasView

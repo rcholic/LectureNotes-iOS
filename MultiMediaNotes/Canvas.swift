@@ -56,6 +56,7 @@ open class Canvas: UIView, UITableViewDelegate
         self.path.lineCapStyle = .round
         self.canvasId = canvasId
         self.backgroundImageView.image = image
+        print("background image size: \(image?.size)")
         if image != nil {
             session.appendBackground(Drawing(stroke: nil, background: image))
         }
@@ -108,13 +109,6 @@ open class Canvas: UIView, UITableViewDelegate
         let mergedImage = self.mergePathsAndImages()
         let currentDrawing = self.currentDrawing()
         self.delegate?.canvas?(self, didUpdateDrawing: currentDrawing, mergedImage: mergedImage)
-    }
-    
-    // custom added
-    open func updateCanvasWithBg() {
-        let currentDrawing = self.currentDrawing()
-        let lastSession = self.session.lastSession()
-        self.delegate?.canvas?(self, didUpdateDrawing: currentDrawing, mergedImage: lastSession?.background)
     }
     
     fileprivate func didSaveCanvas() {
