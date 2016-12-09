@@ -27,6 +27,7 @@ class NXDrawTableViewController: UIViewController {
     var curNote: Note? = nil
     var paletteView: Palette = Palette()
     var canvasViews: [Canvas] = []
+    var recordings: [NoteAudio] = [] // container for recorded audios
     var canvasImages: [UIImage] = []
     
     override func viewDidLoad() {
@@ -60,7 +61,6 @@ class NXDrawTableViewController: UIViewController {
         self.presentBlurredAudioRecorderViewControllerAnimated(recorderVC)
     }
     
-    
     @IBAction func didTapSaveButton(_ sender: Any) {
         
         // save images for each canvas
@@ -77,9 +77,6 @@ class NXDrawTableViewController: UIViewController {
             note = curNote!
         }
         
-        // create a new note
-//        let note = Note()
-        
         canvasImages.forEach {
             let noteImage = NoteImage()
             noteImage.image = $0
@@ -87,12 +84,13 @@ class NXDrawTableViewController: UIViewController {
             note.noteImages.append(noteImage)
         }
         
+        recordings.forEach {
+            note.recordings.append($0)
+        }
+        
         let realm = try! Realm()
-        
         let isUpdate = curNote != nil
-        
         try! realm.write {
-//            realm.add(note)
             realm.add(note, update: isUpdate)
         }
     }
@@ -175,6 +173,13 @@ class NXDrawTableViewController: UIViewController {
             return canvasView
         }
         
+        // add recordings to the container
+        note.recordings.forEach {
+            if let _ = $0.path {
+                recordings.append($0)
+            }
+        }
+        
         self.tableView.reloadData()
     }
     
@@ -187,6 +192,14 @@ class NXDrawTableViewController: UIViewController {
         canvasView.delegate = self // delegate here?
         
         return canvasView
+    }
+    
+    private func promptForTitle(callback blockFunc: @escaping () -> Void) {
+        
+        OperationQueue.main.addOperation { 
+            blockFunc()
+        }
+        
     }
     
     private func configureTableView() {
@@ -346,6 +359,11 @@ extension NXDrawTableViewController: IQAudioRecorderViewControllerDelegate {
     
     func audioRecorderController(_ controller: IQAudioRecorderViewController, didFinishWithAudioAtPath filePath: String) {
         print("finished recording, filePath: \(filePath)")
+        let recording = NoteAudio()
+        recording.name = "Recording \(recordings.count + 1)"
+        recording.path = filePath
+        recordings.append(recording) // add the recording
+        
         controller.dismiss(animated: true, completion: nil)
     }
 }

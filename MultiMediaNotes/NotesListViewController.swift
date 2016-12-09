@@ -22,12 +22,11 @@ class NotesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
-//        for i in 1..<10 {
-//            notes.append("Note Title \(i)")
-//        }
-        
         setupTableView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         loadNotes()
     }
     
@@ -84,6 +83,7 @@ class NotesListViewController: UIViewController {
     }
     
     func loadNotes() {
+//        FileManager.default.removeItem(atPath: <#T##String#>)
         let realm = try! Realm()
         notes = Array(realm.objects(Note.self)) // cast Results<Note> to [Note] array
         self.tableView.reloadData()
@@ -169,7 +169,7 @@ extension NotesListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedNote = notes[indexPath.row]
-        print("selected note: \(selectedNote)")
+//        print("selected note: \(selectedNote)")
         // TODO: perform segue
         let targetVC = self.storyboard?.instantiateViewController(withIdentifier: "NoteDetailBoard") as! NXDrawTableViewController
         targetVC.curNote = selectedNote
