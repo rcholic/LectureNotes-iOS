@@ -14,6 +14,7 @@ class NoteAudio: Object {
 //    var audioData: Data = Data() // NSData
     dynamic var path: String? = nil
     dynamic var name: String? = nil
+    dynamic var cellIndex: Int = 0
 
 //    
 //    override static func ignoredProperties() -> [String] {

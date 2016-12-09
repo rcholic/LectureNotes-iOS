@@ -14,6 +14,7 @@
 		A4BD377ABA9363992049925E /* Pods_MultiMediaNotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E417D5C6BBA9B358B469C216 /* Pods_MultiMediaNotesTests.framework */; };
 		EB2A17531DE3C58B00732FE4 /* NoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2A17521DE3C58B00732FE4 /* NoteImage.swift */; };
 		EB4018731DFA200A00A07284 /* NoteAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4018721DFA200A00A07284 /* NoteAudio.swift */; };
+		EB40187A1DFA577700A07284 /* DKAudioPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB4018791DFA577700A07284 /* DKAudioPlayer.framework */; };
 		EB5F8AD51DC6A90C00983E01 /* UIImageExtractExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AD41DC6A90C00983E01 /* UIImageExtractExt.swift */; };
 		EB5F8AD71DC6A92D00983E01 /* UIViewFrameExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AD61DC6A92D00983E01 /* UIViewFrameExt.swift */; };
 		EB5F8AD91DC6A9A000983E01 /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB5F8AD81DC6A9A000983E01 /* ToolBar.swift */; };
@@ -85,6 +86,9 @@
 		E417D5C6BBA9B358B469C216 /* Pods_MultiMediaNotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiMediaNotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB2A17521DE3C58B00732FE4 /* NoteImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteImage.swift; sourceTree = "<group>"; };
 		EB4018721DFA200A00A07284 /* NoteAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteAudio.swift; sourceTree = "<group>"; };
+		EB4018741DFA491000A07284 /* Jukebox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Jukebox.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MultiMediaNotes-ekghiqmkixanvwcmngdxcwhgeprp/Build/Products/Debug-iphonesimulator/Jukebox/Jukebox.framework"; sourceTree = "<group>"; };
+		EB4018771DFA510A00A07284 /* LMMediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LMMediaPlayer.framework; path = "Pods/../build/Debug-iphoneos/LMMediaPlayer/LMMediaPlayer.framework"; sourceTree = "<group>"; };
+		EB4018791DFA577700A07284 /* DKAudioPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DKAudioPlayer.framework; path = "Pods/../build/Debug-iphoneos/DKAudioPlayer/DKAudioPlayer.framework"; sourceTree = "<group>"; };
 		EB5F8AD41DC6A90C00983E01 /* UIImageExtractExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtractExt.swift; sourceTree = "<group>"; };
 		EB5F8AD61DC6A92D00983E01 /* UIViewFrameExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewFrameExt.swift; sourceTree = "<group>"; };
 		EB5F8AD81DC6A9A000983E01 /* ToolBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
@@ -134,6 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB40187A1DFA577700A07284 /* DKAudioPlayer.framework in Frameworks */,
 				EBA0D6531DE2927800F96389 /* RSKImageCropper.framework in Frameworks */,
 				EBA0D6511DE2927200F96389 /* ImagePicker.framework in Frameworks */,
 				EBCE8F191DE27A0D00EF6047 /* RealmSwift.framework in Frameworks */,
@@ -187,6 +192,9 @@
 		C28ADEDBE3EDEADC859C49A6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB4018791DFA577700A07284 /* DKAudioPlayer.framework */,
+				EB4018771DFA510A00A07284 /* LMMediaPlayer.framework */,
+				EB4018741DFA491000A07284 /* Jukebox.framework */,
 				EBA0D6521DE2927800F96389 /* RSKImageCropper.framework */,
 				EBA0D6501DE2927200F96389 /* ImagePicker.framework */,
 				EBCE8F181DE27A0D00EF6047 /* RealmSwift.framework */,
@@ -777,6 +785,8 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/WYPopoverController",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/IQAudioRecorderController",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/RSKImageCropper",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/LMMediaPlayer",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/DKAudioPlayer",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = MultiMediaNotes/Info.plist;
@@ -801,6 +811,8 @@
 					"$(PROJECT_DIR)/build/Debug-iphoneos/WYPopoverController",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/IQAudioRecorderController",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/RSKImageCropper",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/LMMediaPlayer",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/DKAudioPlayer",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = MultiMediaNotes/Info.plist;

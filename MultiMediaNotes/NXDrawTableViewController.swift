@@ -12,6 +12,8 @@ import IQAudioRecorderController
 import RSKImageCropper
 import ImagePicker
 
+import DKAudioPlayer
+
 //import Realm
 import RealmSwift
 
@@ -23,12 +25,17 @@ class NXDrawTableViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let cellIdentifier = "DrawViewCell"
+    let audioPlayerWidth: CGFloat = 260
+    let audioPlayerHeight: CGFloat = 45
+    let playerVGap: CGFloat = 15
+    
     var popover: WYPopoverController? = .none
     var curNote: Note? = nil
     var paletteView: Palette = Palette()
     var canvasViews: [Canvas] = []
     var recordings: [NoteAudio] = [] // container for recorded audios
     var canvasImages: [UIImage] = []
+    var curVisibleCellIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +58,10 @@ class NXDrawTableViewController: UIViewController {
     
     
     @IBAction func didTapAudioRecordBtn(_ sender: AnyObject) {
+        
+        curVisibleCellIndex = tableView.visibleCells.endIndex
+        curVisibleCellIndex = curVisibleCellIndex > 0 ? curVisibleCellIndex - 1 : 0
+        print("cur index: \(curVisibleCellIndex)")
         let recorderVC = IQAudioRecorderViewController()
         recorderVC.delegate = self
         recorderVC.maximumRecordDuration = 10 // unlimited ??
@@ -96,6 +107,9 @@ class NXDrawTableViewController: UIViewController {
     }
     
     @IBAction func didTapCameraButton(_ sender: Any) {
+        curVisibleCellIndex = tableView.visibleCells.endIndex
+        curVisibleCellIndex = curVisibleCellIndex > 0 ? curVisibleCellIndex - 1 : 0
+        
         let imagePickerVC = ImagePickerController()
         imagePickerVC.imageLimit = 1
         imagePickerVC.delegate = self
@@ -220,16 +234,22 @@ class NXDrawTableViewController: UIViewController {
         tableView.delegate = self
     }
     
-    lazy var visibleCellPaths: [IndexPath] = {
-        let paths = self.tableView.indexPathsForVisibleRows ?? [IndexPath]()
-
-        print("paths.count: \(paths.count)")
-        paths.forEach {
-            print("visible index: \($0)")
-        }
-        
-        return paths
-    }()
+//    lazy var visibleCellPaths: [IndexPath] = {
+//        let paths = self.tableView.indexPathsForVisibleRows ?? [IndexPath]()
+//
+//        print("paths.count: \(paths.count)")
+//        paths.forEach {
+//            print("visible index: \($0)")
+//        }
+//        
+//        return paths
+//    }()
+    
+//    lazy var visibleCellIndex: Int = {
+//        var endIndex = self.tableView.visibleCells.endIndex
+//        endIndex = endIndex > 0 ? endIndex - 1 : 0
+//        return endIndex
+//    }()
 }
 
 extension NXDrawTableViewController: UITableViewDataSource {
@@ -362,9 +382,28 @@ extension NXDrawTableViewController: IQAudioRecorderViewControllerDelegate {
         let recording = NoteAudio()
         recording.name = "Recording \(recordings.count + 1)"
         recording.path = filePath
+        recording.cellIndex = curVisibleCellIndex // cell this recording belongs to
         recordings.append(recording) // add the recording
         
         controller.dismiss(animated: true, completion: nil)
+        
+        let visibleCanvas = canvasViews[curVisibleCellIndex]
+        let player = DKAudioPlayer.init(audioFilePath: filePath, width:audioPlayerWidth, height: audioPlayerHeight)
+        
+        var numPlayer = 0
+        for p in visibleCanvas.subviews {
+            if let _ = p as? DKAudioPlayer {
+                numPlayer += 1
+            }
+            print("numPlayer: \(numPlayer)")
+        }
+        
+        player!.frame = CGRect(x: 30, y: 70 + CGFloat(numPlayer) * (audioPlayerHeight + playerVGap), width: audioPlayerWidth, height: audioPlayerHeight)
+        
+        visibleCanvas.addSubview(player!)
+        
+        player!.show(animated: true)
+        player!.play()
     }
 }
 
@@ -398,10 +437,10 @@ extension NXDrawTableViewController: RSKImageCropViewControllerDelegate {
     
     func imageCropViewController(_ controller: RSKImageCropViewController, didCropImage croppedImage: UIImage, usingCropRect cropRect: CGRect) {
 //        self.canvasView?.update(croppedImage)
-        if let currentCanvasIndex = visibleCellPaths.first?.row {
-            let currentCanvas = canvasViews[currentCanvasIndex]
-            currentCanvas.update(croppedImage) // update the canvas with the cropped image
-        }
+        
+        let currentCanvas = canvasViews[curVisibleCellIndex]
+        currentCanvas.update(croppedImage) // update the canvas with the cropped image
+    
         controller.dismiss(animated: true, completion: nil)
     }
 }

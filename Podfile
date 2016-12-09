@@ -12,6 +12,8 @@ target 'MultiMediaNotes' do
     pod 'RealmSwift'
     pod 'ImagePicker'
     pod 'RSKImageCropper'
+    pod "LMMediaPlayer"
+    pod "DKAudioPlayer"
 
   # Pods for MultiMediaNotes
 
