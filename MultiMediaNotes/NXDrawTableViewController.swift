@@ -61,7 +61,7 @@ class NXDrawTableViewController: UIViewController {
         
         curVisibleCellIndex = tableView.visibleCells.endIndex
         curVisibleCellIndex = curVisibleCellIndex > 0 ? curVisibleCellIndex - 1 : 0
-        print("cur index: \(curVisibleCellIndex)")
+        
         let recorderVC = IQAudioRecorderViewController()
         recorderVC.delegate = self
         recorderVC.maximumRecordDuration = 10 // unlimited ??
@@ -190,7 +190,25 @@ class NXDrawTableViewController: UIViewController {
         // add recordings to the container
         note.recordings.forEach {
             if let _ = $0.path {
-                recordings.append($0)
+                recordings.append($0) // append to the container for recordings
+                print("recording path: \($0.path)")
+//                // display recordings in their owning cells
+//                if let audioPath = $0.path {
+//                    // TODO: audioPath may not contain the audio!!
+//                    let player = DKAudioPlayer.init(audioFilePath: "/Users/guoliangwang/Downloads/example.m4a", width:audioPlayerWidth, height: audioPlayerHeight)
+//                    var numPlayer = 0
+//                    let curCanvas = canvasViews[$0.cellIndex]
+//                    for p in curCanvas.subviews {
+//                        if let _ = p as? DKAudioPlayer {
+//                            numPlayer += 1
+//                        }
+//                    }
+//                    
+//                    player!.frame = CGRect(x: 30, y: 70 + CGFloat(numPlayer) * (audioPlayerHeight + playerVGap), width: audioPlayerWidth, height: audioPlayerHeight)
+//                    
+//                    curCanvas.addSubview(player!)
+//                    player!.show(animated: true)
+//                }
             }
         }
         
@@ -267,7 +285,11 @@ extension NXDrawTableViewController: UITableViewDataSource {
         
         cell.delegate = self // cell delegate - delete
         cell.canvasView = canvasViews[indexPath.row]
+        let cellAudios = recordings.filter {
+            return $0.cellIndex == indexPath.row
+        }
 //        cell.canvasView!.delegate = self
+        cell.recordings = cellAudios
         cell.canvasDelegate = self  // TODO: canvas delegate
         cell.deleteButton.tag = indexPath.row
         

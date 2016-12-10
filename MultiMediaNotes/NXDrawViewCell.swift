@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import DKAudioPlayer
 
 @objc protocol NXDrawViewCellDelegate: class {
     func removeCell(cell: NXDrawViewCell, index: Int)
@@ -19,6 +20,7 @@ class NXDrawViewCell: UITableViewCell {
     var deleteButton: UIButton = UIButton(type: UIButtonType.custom)
     weak var delegate: NXDrawViewCellDelegate?
     weak var canvasView: Canvas?
+    var recordings: [NoteAudio] = []
     weak var canvasDelegate:  ExtendedCanvasDelegate? // CanvasDelegate? //
     
     override func awakeFromNib() {
@@ -52,6 +54,22 @@ class NXDrawViewCell: UITableViewCell {
         deleteButton.snp.makeConstraints { (make) in
             make.top.equalTo(canvasView).offset(-6)
             make.right.equalTo(canvasView).offset(8)
+        }
+        
+        recordings.forEach { _ in
+            print("embedding player to cell")
+            // below does not show up! "/Users/guoliangwang/Downloads/example.m4a"
+            let player = DKAudioPlayer.init(audioFilePath: "/Users/guoliangwang/Downloads/example.m4a", width:260, height: 45)
+            var numPlayer = 0
+            for p in canvasView.subviews {
+                if let _ = p as? DKAudioPlayer {
+                    numPlayer += 1
+                }
+            }
+            
+            player!.frame = CGRect(x: 30, y: 70 + CGFloat(numPlayer * 275), width: CGFloat(260), height: 45)
+            canvasView.addSubview(player!)
+            player!.show(animated: true)
         }
         
         contentView.bringSubview(toFront: canvasView)
