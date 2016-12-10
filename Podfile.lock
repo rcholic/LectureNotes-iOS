@@ -3,7 +3,6 @@ PODS:
   - ImagePicker (2.0.0)
   - IQAudioRecorderController (1.2.0):
     - SCSiriWaveformView
-  - LMMediaPlayer (0.5.1)
   - Realm (2.1.1):
     - Realm/Headers (= 2.1.1)
   - Realm/Headers (2.1.1)
@@ -19,7 +18,6 @@ DEPENDENCIES:
   - DKAudioPlayer
   - ImagePicker
   - IQAudioRecorderController
-  - LMMediaPlayer
   - RealmSwift
   - RSKImageCropper
   - SnapKit
@@ -30,7 +28,6 @@ SPEC CHECKSUMS:
   DKAudioPlayer: 93f80ab2fa43ee8340b6949bb9265c79e4691406
   ImagePicker: 81175d36c2852cb543cb4f5d6c19e28f3e8d90eb
   IQAudioRecorderController: 1d46d99330cb2c9381568665d123cf435460a43e
-  LMMediaPlayer: 8a023ef2a36293e97c5aecc2b07b6f06ec1c0fd8
   Realm: a55959c0b171a5fe5267406d17f314fec3cefaae
   RealmSwift: 749fd955bf8d6471c21d218b9389a47aaeccfe3f
   RSKImageCropper: 27d0e7efa800b509720163c3561fe08a04853780
@@ -39,6 +36,6 @@ SPEC CHECKSUMS:
   SwiftDate: 9aa3259d8850d818bec02802f8f05aa9a8c26fdb
   WYPopoverController: 00d879c25bddd1fd873dcc21aa98c8308d7f1555
 
-PODFILE CHECKSUM: ea9205e51619aa8bac1121cf866167ce6bd79338
+PODFILE CHECKSUM: fba5c84275dc569b3dd62d5a40baa77776766325
 
 COCOAPODS: 1.1.1
